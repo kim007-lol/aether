@@ -1,0 +1,2 @@
+#include <rings>
+uniform vec3 uSun;uniform float uFade;varying vec3 vP;varying vec3 vWorld;void main(){float r=length(vP.xy);float d=ringDensity(r);vec3 color=mix(vec3(.2,.11,.06),vec3(.33,.48,.65),smoothstep(14.,30.,r));gl_FragColor=vec4(color*(.1+.9*planetShadow(vWorld,uSun)),d*.12*uFade);}

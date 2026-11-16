@@ -1,0 +1,3 @@
+#include <rings>
+#include <atmosphere>
+uniform vec3 uSun;uniform vec3 uLightView;varying vec3 vWorld;varying float vRadius;varying float vFade;varying float vSeed;void main(){vec2 uv=gl_PointCoord*2.-1.;float r=length(uv);if(r>1.)discard;vec3 N=vec3(uv,sqrt(max(1.-r*r,0.)));float light=.12+.88*max(dot(N,uLightView),0.);vec3 color=mix(vec3(.25,.16,.095),vec3(.65,.77,.88),smoothstep(14.,24.,vRadius));color=mix(color,vec3(.33,.49,.7),smoothstep(24.,30.,vRadius));float shadow=planetShadow(vWorld,uSun);float scatter=phaseMie(dot(normalize(cameraPosition-vWorld),-uSun),.6)*.35;float sparkle=pow(max(dot(N,normalize(uLightView+vec3(0,0,1))),0.),64.)*.8;gl_FragColor=vec4(color*(light+scatter+sparkle)*(.08+.92*shadow),smoothstep(1.,.6,r)*vFade);}

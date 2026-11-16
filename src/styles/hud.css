@@ -1,0 +1,47 @@
+.hud { position: fixed; inset: 0; z-index: 20; pointer-events: none; }
+.hud-top { position: absolute; top: 24px; left: var(--margin); right: var(--margin); display: flex; align-items: center; justify-content: space-between; }
+.wordmark { pointer-events: auto; min-height: 44px; padding: 0; display: flex; align-items: center; gap: 13px; font-family: var(--display); font-size: .875rem; font-weight: 500; letter-spacing: .25em; }
+.wordmark svg { width: 23px; height: 23px; fill: none; stroke: var(--stellar); stroke-width: 1; }
+.hud-controls { display: flex; align-items: center; gap: 20px; }
+.hud-button { pointer-events: auto; min-height: 44px; min-width: 44px; padding: 0 4px; font-size: .5625rem; letter-spacing: .12em; display: inline-flex; align-items: center; gap: 9px; transition: color .3s; }
+.hud-button:hover { color: var(--cyan); }
+.control-divider { height: 16px; width: 1px; background: var(--hairline); }
+.sound-icon { display: flex; align-items: center; height: 16px; gap: 3px; }
+.sound-icon i { display: block; width: 1px; height: 3px; background: currentColor; transition: height .5s; }
+.sound-icon i:nth-child(2),.sound-icon i:nth-child(4) { height: 9px; }
+.sound-icon i:nth-child(3) { height: 15px; }
+[aria-pressed=false] .sound-icon i { height: 3px; }
+.chapter-nav { position: fixed; right: 24px; top: 50%; transform: translateY(-50%); z-index: 20; display: flex; flex-direction: column; align-items: flex-end; }
+.chapter-nav button { display: flex; align-items: center; justify-content: flex-end; gap: 12px; min-height: 44px; min-width: 44px; padding: 0; }
+.chapter-nav .nav-label { font-size: .5rem; letter-spacing: .12em; opacity: 0; transform: translateX(8px); transition: opacity .4s,transform .4s; }
+.chapter-nav .nav-tick { display: block; width: 10px; height: 1px; background: var(--stellar); opacity: .35; transition: width .5s,opacity .5s,background .5s; }
+.chapter-nav button[aria-current=step] .nav-label,.chapter-nav button:hover .nav-label,.chapter-nav button:focus-visible .nav-label { opacity: 1; transform: none; }
+.chapter-nav button[aria-current=step] .nav-tick { width: 26px; opacity: 1; background: var(--cyan); }
+.hud-bottom { position: absolute; bottom: 32px; left: var(--margin); right: var(--margin); display: flex; justify-content: space-between; align-items: center; }
+.live-chapter { display: flex; gap: 14px; align-items: center; font-size: .5625rem; letter-spacing: .14em; }
+.live-chapter::before { content: ''; width: 4px; height: 4px; background: var(--cyan); border-radius: 50%; box-shadow: 0 0 10px rgba(92,225,255,.4); }
+.position-counter { display: flex; align-items: center; gap: 10px; font-size: .5625rem; letter-spacing: .08em; }
+.position-counter .counter-total { color: var(--stellar-dim); }
+.progress-track { position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--hairline); }
+.progress-line { height: 100%; background: var(--cyan); transform-origin: left; transform: scaleX(0); box-shadow: 0 0 8px rgba(92,225,255,.5); }
+.scroll-hint { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 20; display: flex; align-items: center; gap: 14px; font-size: .5rem; letter-spacing: .13em; pointer-events: none; }
+.scroll-hint::before { content: ''; display: block; width: 1px; height: 24px; background: linear-gradient(var(--hairline),var(--stellar)); transform-origin: top; animation: scroll-line 2.5s ease-in-out infinite; }
+@keyframes scroll-line { 0%,100% { transform: scaleY(.6); opacity: .4; } 50% { transform: scaleY(1); opacity: 1; } }
+@media (max-width:700px) {
+  .hud-top { top: 16px; }
+  .wordmark { font-size: .6875rem; gap: 8px; letter-spacing: .19em; }
+  .wordmark svg { width: 19px; height: 19px; }
+  .hud-controls { gap: 8px; }
+  .hud-button { font-size: .5rem; gap: 6px; letter-spacing: .05em; }
+  .sound-text { display: none; }
+  .control-divider { height: 12px; }
+  .chapter-nav { right: 8px; }
+  .chapter-nav button { min-width: 44px; }
+  .chapter-nav .nav-label { display: none; }
+  .chapter-nav button[aria-current=step] .nav-tick { width: 16px; }
+  .chapter-nav .nav-tick { width: 7px; }
+  .hud-bottom { bottom: 32px; }
+  .live-chapter { font-size: .5rem; gap: 8px; }
+  .position-counter { font-size: .5rem; }
+  .scroll-hint { bottom: 78px; white-space: nowrap; }
+}

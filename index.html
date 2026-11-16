@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#05060a" />
+<meta name="description" content="Beyond the last light, a world still listens. A cinematic journey in six movements." />
+<title>AETHER — A journey in six movements</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2305060a'/%3E%3Ccircle cx='32' cy='32' r='18' fill='none' stroke='%235ce1ff' stroke-width='2'/%3E%3Cpath d='M19 45 32 16l13 29M25 34h14' fill='none' stroke='%23f4f1ea' stroke-width='2'/%3E%3C/svg%3E" />
+<link rel="preload" href="./node_modules/@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/src/styles/base.css" />
+<style>
+html,body{margin:0;background:#05060a;color:#f4f1ea}.loader{position:fixed;inset:0;z-index:99;background:#0b0e17;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none}.loader-wordmark{font-family:'Space Grotesk Variable',sans-serif;font-size:clamp(2rem,5vw,4rem);font-weight:300;letter-spacing:.24em;text-indent:.24em}.loader-orbit{width:190px;height:190px;position:relative;display:grid;place-items:center;margin-bottom:40px}.loader-orbit svg{position:absolute;inset:0;width:100%;height:100%;fill:none;transform:rotate(-90deg)}.loader-track{stroke:rgba(244,241,234,.08);stroke-width:.5}.loader-arc{stroke:#5ce1ff;stroke-width:1;stroke-dasharray:553;stroke-dashoffset:553;filter:drop-shadow(0 0 5px rgba(92,225,255,.6));transition:stroke-dashoffset .35s}.loader-count{font-family:'JetBrains Mono Variable',monospace;font-size:12px;letter-spacing:.2em;color:#5ce1ff;font-variant-numeric:tabular-nums}.loader-status{font-family:'JetBrains Mono Variable',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;margin-top:20px;color:rgba(244,241,234,.62)}.loader-bottom{position:absolute;bottom:36px;left:0;right:0;text-align:center;font-family:monospace;font-size:9px;letter-spacing:.25em;color:rgba(244,241,234,.3)}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#journey">Skip to content</a>
+<div id="loader" class="loader" role="status" aria-label="Calibrating orbit">
+ <div class="loader-orbit"><svg viewBox="0 0 190 190" aria-hidden="true"><circle class="loader-track" cx="95" cy="95" r="88"/><circle class="loader-arc" cx="95" cy="95" r="88"/></svg><span class="loader-count" aria-hidden="true">000</span></div>
+ <div class="loader-wordmark">AETHER</div><div class="loader-status">Calibrating orbit</div>
+</div>
+<div id="webgl" aria-hidden="true"></div>
+<header class="hud">
+ <div class="hud-top">
+  <button class="wordmark" type="button" aria-label="Aether — return to arrival" data-action="home"><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="10"/><ellipse cx="14" cy="14" rx="14" ry="4" transform="rotate(-35 14 14)"/><circle cx="14" cy="14" r="2"/></svg><span>AETHER</span></button>
+  <div class="hud-controls">
+   <button class="hud-button" id="sound-toggle" type="button" aria-label="Enable ambient sound" aria-pressed="false"><span class="sound-icon" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="sound-text">Sound off</span></button>
+   <span class="control-divider" aria-hidden="true"></span>
+   <button class="hud-button" id="quality-toggle" type="button" aria-label="Quality: Auto. Change quality"><span>Quality</span><span id="quality-value">Auto</span></button>
+  </div>
+ </div>
+ <div class="hud-bottom"><span class="live-chapter" id="live-chapter">01 — Arrival</span><div class="position-counter" aria-hidden="true"><span id="chapter-counter">01</span><span class="counter-total">/ 06</span></div></div>
+ <div class="progress-track" aria-hidden="true"><div class="progress-line" id="progress-line"></div></div>
+</header>
+<nav class="chapter-nav" aria-label="Chapters"><button type="button" data-chapter="0" aria-label="Go to 01 — Arrival" aria-current="step"><span class="nav-label">Arrival</span><span class="nav-tick" aria-hidden="true"></span></button><button type="button" data-chapter="1" aria-label="Go to 02 — Atmosphere" ><span class="nav-label">Atmosphere</span><span class="nav-tick" aria-hidden="true"></span></button><button type="button" data-chapter="2" aria-label="Go to 03 — Rings" ><span class="nav-label">Rings</span><span class="nav-tick" aria-hidden="true"></span></button><button type="button" data-chapter="3" aria-label="Go to 04 — Debris" ><span class="nav-label">Debris</span><span class="nav-tick" aria-hidden="true"></span></button><button type="button" data-chapter="4" aria-label="Go to 05 — Nebula" ><span class="nav-label">Nebula</span><span class="nav-tick" aria-hidden="true"></span></button><button type="button" data-chapter="5" aria-label="Go to 06 — Core" ><span class="nav-label">Core</span><span class="nav-tick" aria-hidden="true"></span></button></nav>
+<main id="journey" tabindex="-1" aria-label="A journey in six movements">
+<section class="chapter" id="arrival" aria-labelledby="heading-arrival" style="top:0svh"><div class="hero" id="hero"><p class="eyebrow">A journey in six movements</p><h1 class="hero-title">AETHER</h1><p class="hero-subtitle">Beyond the last light, a world still listens.</p></div><div class="chapter-copy" data-copy="0"><p class="chapter-label">01 — Arrival</p><h2 class="chapter-headline" id="heading-arrival">A world that breathes light.</h2><p class="chapter-body">Four billion years of weather, drawn in a single glance. Aether turns slowly, as if it knew you were coming.</p></div></section>
+<section class="chapter" id="atmosphere" aria-labelledby="heading-atmosphere" style="top:128svh"><div class="chapter-copy" data-copy="1"><p class="chapter-label">02 — Atmosphere</p><h2 class="chapter-headline" id="heading-atmosphere">Where day lets go of night.</h2><p class="chapter-body">At the terminator, cities wake in gold while storms rewrite the sky below. Every cloud here is computed, not painted.</p></div></section>
+<section class="chapter" id="rings" aria-labelledby="heading-rings" style="top:272svh"><div class="chapter-copy" data-copy="2"><p class="chapter-label">03 — Rings</p><h2 class="chapter-headline" id="heading-rings">Ten thousand years, in motion.</h2><p class="chapter-body">Hundreds of thousands of fragments of ice and stone keep a quiet orbit. Slip between them.</p></div></section>
+<section class="chapter" id="debris" aria-labelledby="heading-debris" style="top:416svh"><div class="chapter-copy" data-copy="3"><p class="chapter-label">04 — Debris</p><h2 class="chapter-headline" id="heading-debris">The ruins of a moon that never formed.</h2><p class="chapter-body">Each rock carries its own scars. Fly close enough to read them.</p></div></section>
+<section class="chapter" id="nebula" aria-labelledby="heading-nebula" style="top:560svh"><div class="chapter-copy" data-copy="4"><p class="chapter-label">05 — Nebula</p><h2 class="chapter-headline" id="heading-nebula">Light, before it learns a name.</h2><p class="chapter-body">A cloud of ionized gas, lit from within by stars not yet born.</p></div></section>
+<section class="chapter" id="core" aria-labelledby="heading-core" style="top:688svh"><div class="chapter-copy" data-copy="5"><p class="chapter-label">06 — Core</p><h2 class="chapter-headline" id="heading-core">Touch the heart of it.</h2><p class="chapter-body">Everything you passed was only its echo. Move your cursor. It answers.</p><div class="cta" id="final-actions"><button class="primary-button" type="button" data-action="home">Begin again<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button><button class="secondary-button" type="button" data-action="replay">Replay the descent</button></div></div></section>
+</main>
+<div class="scroll-hint" id="scroll-hint" aria-hidden="true">Scroll to descend</div>
+<footer class="footer-line" id="footer-line">Made with WebGL. Built to be felt.</footer>
+<div class="sr-only" id="chapter-announcement" aria-live="polite" aria-atomic="true">Arrival</div>
+<div class="cursor-dot" aria-hidden="true"></div><div class="cursor-ring" aria-hidden="true"></div>
+<noscript><style>.loader,.hud,.chapter-nav,.scroll-hint{display:none}#journey{height:auto;padding:80px 24px}.chapter{position:relative;height:auto!important;margin-bottom:80px;top:auto!important}.chapter-copy{position:static!important;visibility:visible;opacity:1;transform:none;width:auto!important}.hero{position:static;margin-bottom:80px;padding:20px}.footer-line{position:static;transform:none;visibility:visible;opacity:1}</style></noscript>
+<script type="module" src="/src/main.ts"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+vec3 blackbody(float kelvin){float t=kelvin/100.;vec3 c;c.r=t<=66.?1.:clamp(1.292936*pow(max(t-60.,1.),-.133205),0.,1.);c.g=t<=66.?clamp(.390082*log(max(t,1.))-.631841,0.,1.):clamp(1.129891*pow(max(t-60.,1.),-.075515),0.,1.);c.b=t>=66.?1.:(t<=19.?0.:clamp(.543207*log(t-10.)-1.196254,0.,1.));return pow(c,vec3(2.2));}

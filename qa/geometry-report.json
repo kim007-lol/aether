@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "tiers": {
+    "low": {
+      "planet": 60960,
+      "cloud": 60960,
+      "hero": 16820,
+      "mid": 4500,
+      "far": 980,
+      "ring": 720,
+      "monolith": 84500,
+      "heart": 21780,
+      "orbit": 32768
+    },
+    "medium": {
+      "planet": 122240,
+      "cloud": 122240,
+      "hero": 16820,
+      "mid": 4500,
+      "far": 980,
+      "ring": 720,
+      "monolith": 84500,
+      "heart": 21780,
+      "orbit": 32768
+    },
+    "high": {
+      "planet": 195840,
+      "cloud": 195840,
+      "hero": 16820,
+      "mid": 4500,
+      "far": 980,
+      "ring": 720,
+      "monolith": 84500,
+      "heart": 21780,
+      "orbit": 32768
+    },
+    "ultra": {
+      "planet": 326656,
+      "cloud": 326656,
+      "hero": 16820,
+      "mid": 4500,
+      "far": 980,
+      "ring": 720,
+      "monolith": 84500,
+      "heart": 21780,
+      "orbit": 32768
+    }
+  },
+  "generationMilliseconds": {
+    "hero": 67.93,
+    "mid": 23.76,
+    "far": 3.05,
+    "ring": 2.05
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "totalGzip": 52984,
+  "chunks": [
+    {
+      "file": "index-BBD-983W.js",
+      "bytes": 142162,
+      "gzip": 52984
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+:root {
+  --void: #05060a; --ink: #0b0e17; --stellar: #f4f1ea; --stellar-dim: rgba(244,241,234,.62);
+  --hairline: rgba(244,241,234,.14); --cyan: #5ce1ff; --violet: #8b5cff; --ember: #ff8a4c; --gold: #ffd89a;
+  --margin: clamp(20px,4vw,72px); --display: 'Space Grotesk Variable', sans-serif;
+  --editorial: 'Instrument Serif', serif; --mono: 'JetBrains Mono Variable', monospace;
+}

@@ -1,0 +1,1 @@
+uniform sampler2D uVolume;varying vec2 vUv;void main(){vec4 volume=texture2D(uVolume,vUv);vec3 background=vec3(.001,.0015,.004);gl_FragColor=vec4(volume.rgb+background*volume.a,1.);}

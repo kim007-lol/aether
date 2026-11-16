@@ -87,7 +87,7 @@ export class TextReveal {
         { y: 10, opacity: 0 },
         {
           y: 0,
-          opacity: 0.84,
+          opacity: 1,
           duration: 1,
           delay: 0.15,
           ease: "expo.out",

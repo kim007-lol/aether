@@ -81,9 +81,9 @@ a {
   z-index: -1;
   background: radial-gradient(
     ellipse,
-    rgba(5, 6, 10, 0.55),
-    rgba(5, 6, 10, 0.35) 35%,
-    rgba(5, 6, 10, 0) 72%
+    rgba(5, 6, 10, 0.55) 48%,
+    rgba(5, 6, 10, 0.35) 72%,
+    rgba(5, 6, 10, 0) 100%
   );
   pointer-events: none;
 }
@@ -341,9 +341,9 @@ a {
     inset: -48px -36px -60px;
     background: radial-gradient(
       ellipse,
-      rgba(5, 6, 10, 0.55),
-      rgba(5, 6, 10, 0.45) 40%,
-      rgba(5, 6, 10, 0) 75%
+      rgba(5, 6, 10, 0.55) 55%,
+      rgba(5, 6, 10, 0.4) 80%,
+      rgba(5, 6, 10, 0) 100%
     );
   }
   .chapter:last-child .chapter-copy {

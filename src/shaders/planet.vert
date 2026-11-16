@@ -1,0 +1,2 @@
+#include <terrain>
+varying vec3 vP;varying vec3 vWorld;varying vec3 vNormal;uniform float uCloud;void main(){vP=position;vec3 p=position;if(uCloud<.5)p+=normal*max(0.,terrain(normalize(position))-.48)*.4;vWorld=(modelMatrix*vec4(p,1.)).xyz;vNormal=normalize(mat3(modelMatrix)*normal);gl_Position=projectionMatrix*viewMatrix*vec4(vWorld,1.);}

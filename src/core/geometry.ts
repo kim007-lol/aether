@@ -8,7 +8,7 @@ import {
 } from "three";
 import { mergeVertices } from "three/addons/utils/BufferGeometryUtils.js";
 
-import { createNoise3D } from 'simplex-noise';
+import { createNoise3D } from "simplex-noise";
 
 export type GeometryTier = "low" | "medium" | "high" | "ultra";
 export const SEGMENTS: Record<GeometryTier, readonly [number, number]> = {
@@ -165,4 +165,3 @@ export function createRockGeometry(
   for (let i = 0; i < job.count; i++) job.displace(i);
   return job.finish();
 }
-

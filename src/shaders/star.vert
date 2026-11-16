@@ -1,0 +1,1 @@
+attribute float aSize;attribute float aTemp;attribute float aPhase;attribute float aSpeed;uniform float uTime;uniform float uPixelRatio;varying float vTemp;varying float vLight;void main(){vTemp=aTemp;vLight=.85+.15*sin(uTime*aSpeed+aPhase);vec4 mv=modelViewMatrix*vec4(position,1.);gl_Position=projectionMatrix*mv;gl_PointSize=aSize*uPixelRatio;}

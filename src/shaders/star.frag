@@ -1,0 +1,2 @@
+#include <blackbody>
+uniform float uSpikes;varying float vTemp;varying float vLight;void main(){vec2 uv=gl_PointCoord*2.-1.;float r=length(uv);if(r>1.)discard;float disc=pow(max(1.-r,0.),3.);float spike=exp(-abs(uv.x)*65.)*exp(-abs(uv.y)*5.)+exp(-abs(uv.y)*65.)*exp(-abs(uv.x)*5.);float a=disc+spike*uSpikes*.2;gl_FragColor=vec4(blackbody(vTemp)*vLight*(1.2+uSpikes*1.8),a);}

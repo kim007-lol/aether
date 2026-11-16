@@ -4,26 +4,46 @@ A continuous, scroll-driven WebGL journey through Arrival, Atmosphere, Rings, De
 
 ## Run
 
-Use Node.js 22.12 or newer; Node.js 24.14 was used during development. From the parent workspace:
+Use Node.js 22.12 or newer; Node.js 24.14 was used during development. The commands below work in Windows Command Prompt (CMD).
 
-```powershell
+For the first installation, start from the parent workspace. Stop any existing AETHER dev or preview server with **Ctrl+C** in its terminal before installing:
+
+```cmd
 cd aether
-npm ci
+npm ci && npm run dev
+```
+
+Vite prints the local development address, normally `http://127.0.0.1:5173`. Keep that terminal running while using the site. The `&&` runs the server only if installation succeeds.
+
+On later launches, dependencies are already installed. From inside `aether/`, run only:
+
+```cmd
 npm run dev
 ```
 
-Vite prints the local development address, normally `http://127.0.0.1:5173`. Keep the terminal running while using the site.
+For production verification, stop the dev server with **Ctrl+C**, then run from inside `aether/`:
 
-For the production build:
-
-```powershell
-npm run typecheck
-npm run lint
-npm run build
-npm run preview
+```cmd
+npm run typecheck && npm run lint && npm run build && npm run preview
 ```
 
-Preview serves `http://127.0.0.1:4173`. Deploy the generated `dist/` directory to a static web server. The Vite base is relative, so bundled resources also work under a subdirectory. Opening `index.html` directly as a filesystem URL is not supported.
+Preview serves `http://127.0.0.1:4173` and keeps its terminal occupied. Run QA in a separate terminal as described below. Stop preview with **Ctrl+C** before reinstalling dependencies.
+
+Deploy the generated `dist/` directory to a static web server. The Vite base is relative, so bundled resources also work under a subdirectory. Opening `index.html` directly as a filesystem URL is not supported.
+
+### Windows: EPERM during npm ci
+
+If `npm ci` reports `EPERM: operation not permitted, unlink` for `@rolldown/binding-win32-x64-msvc/rolldown-binding.win32-x64-msvc.node`, a running AETHER Vite process can still be holding that native file open. Stop this project's dev and preview servers with **Ctrl+C** in their terminals, and wait for the command prompt to return. Then, inside `aether/`, restore the dependencies:
+
+```cmd
+npm ci && npm run dev
+```
+
+A failed `npm ci` can leave `node_modules` only partially installed. Subsequent “vite/tsc/eslint is not recognized” or missing Playwright errors are consequences of that incomplete installation. Wait for `npm ci` to finish successfully before running the other commands. Installing those tools globally does not repair this project.
+
+For this file-lock case, administrator mode is not needed. Do not terminate every Node process: other projects and tools may also use Node. If the lock persists after stopping the AETHER servers, identify the process holding this particular file before retrying.
+
+CMD does not recognize `#` as a comment. Explanatory instructions in this README are outside the command blocks; copy only the commands inside each block.
 
 ## Controls
 
@@ -105,22 +125,33 @@ The renderer outputs linear scene data into the post pipeline. Half-float target
 
 Install Playwright's Chromium once:
 
-```powershell
-npx playwright install chromium
-npm run qa:geometry
-npm run build
-npm run preview
+```cmd
+npx playwright install chromium && npm run qa:geometry && npm run build && npm run preview
 ```
 
 Leave preview running, then in a second terminal inside `aether/`:
 
-```powershell
+```cmd
 npm run qa
 ```
 
 The QA script launches Chromium visibly by default and requests hardware rendering, captures 11 progress positions at 1440×900 and 390×844, and collects console/network events, renderer counts, pixel statistics, interactions, fallback behavior, memory loops, and adaptation. It writes `qa/report.json` and `qa/screenshots/p{progress}-{viewport}.png`. The suite also checks the layout after rotation.
 
-Optional PowerShell configuration:
+Optional CMD configuration, from the second terminal inside `aether/`:
+
+```cmd
+set "QA_URL=http://127.0.0.1:4173"
+set "QA_ITERATION=1"
+set "QA_HEADLESS=1"
+set "QA_SOFTWARE=1"
+npm run qa
+set "QA_URL="
+set "QA_ITERATION="
+set "QA_HEADLESS="
+set "QA_SOFTWARE="
+```
+
+Equivalent configuration for PowerShell:
 
 ```powershell
 $env:QA_URL = 'http://127.0.0.1:4173'

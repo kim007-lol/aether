@@ -1,2 +1,2 @@
-import {gsap} from 'gsap';import {ScrollDirector} from './core/ScrollDirector';import {Hud} from './ui/Hud';import {Loader} from './ui/Loader';
-const scroll=new ScrollDirector(false);const loader=new Loader();const hud=new Hud({jumpTo:p=>scroll.jumpTo(p),setQuality:()=>{},toggleAudio:()=>{},replay:()=>scroll.replay()},false);gsap.ticker.add((_t,ms)=>{scroll.update(Math.min(ms/1000,.05));hud.update(scroll.target);loader.update();});loader.setProgress(1);void loader.finish();
+import {App} from './app/App';import {showFallback} from './ui/Fallback';
+const probe=document.createElement('canvas');const gl=probe.getContext('webgl2');const fallback=new URLSearchParams(location.search).has('forceFallback')||!gl;if(gl)gl.getExtension('WEBGL_lose_context')?.loseContext();if(fallback)showFallback();else new App();

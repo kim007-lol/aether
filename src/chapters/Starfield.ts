@@ -1,7 +1,116 @@
-import {AdditiveBlending,BackSide,BufferGeometry,Float32BufferAttribute,Mesh,Points,ShaderMaterial,SphereGeometry} from 'three';import {SceneChapter,type Ctx,type FrameState} from './Chapter';import type {TaskQueue} from '../core/TaskQueue';import type {Tier} from '../config/quality';import {random} from '../core/math';import {glsl} from '../core/glsl';import starVert from '../shaders/star.vert?raw';import starFrag from '../shaders/star.frag?raw';import skyVert from '../shaders/sky.vert?raw';import skyFrag from '../shaders/sky.frag?raw';
-export class Starfield extends SceneChapter{readonly id='stars';readonly range:[number,number]=[0,1];private layers:Points<BufferGeometry,ShaderMaterial>[]=[];private time={value:0};private pixel={value:1};
- override async init(ctx:Ctx,queue:TaskQueue){await super.init(ctx,queue);const rnd=random(90210);const fractions=[.6,.3,.1,.002];for(let layer=0;layer<4;layer++){const count=Math.ceil(200000*fractions[layer]);const p=new Float32Array(count*3),size=new Float32Array(count),temp=new Float32Array(count),phase=new Float32Array(count),speed=new Float32Array(count);for(let i=0;i<count;i++){const theta=rnd()*Math.PI*2;let latitude=Math.asin(rnd()*2-1);if(rnd()<.4)latitude=Math.sqrt(-2*Math.log(Math.max(rnd(),.001)))*Math.cos(rnd()*Math.PI*2)*.18;const cos=Math.cos(latitude);p[i*3]=Math.cos(theta)*cos*2000;p[i*3+1]=Math.sin(latitude)*2000;p[i*3+2]=Math.sin(theta)*cos*2000;size[i]=layer===3?7+rnd()*5:.75+layer*.8+Math.pow(rnd(),4)*1.8;temp[i]=3000+Math.sqrt(rnd())*9000;phase[i]=rnd()*6.28;speed[i]=.3+rnd();if(i%4096===0)await queue.checkpoint();}const geometry=new BufferGeometry();geometry.setAttribute('position',new Float32BufferAttribute(p,3));geometry.setAttribute('aSize',new Float32BufferAttribute(size,1));geometry.setAttribute('aTemp',new Float32BufferAttribute(temp,1));geometry.setAttribute('aPhase',new Float32BufferAttribute(phase,1));geometry.setAttribute('aSpeed',new Float32BufferAttribute(speed,1));const material=new ShaderMaterial({vertexShader:starVert,fragmentShader:glsl(starFrag),uniforms:{uTime:this.time,uPixelRatio:this.pixel,uSpikes:{value:layer===3?1:0}},transparent:true,depthWrite:false,blending:AdditiveBlending});const points=new Points(geometry,material);points.frustumCulled=false;points.renderOrder=-90;this.layers.push(points);this.group.add(points);}this.group.rotation.set(.4,0,-.35);const sky=new Mesh(new SphereGeometry(2400,32,24),new ShaderMaterial({vertexShader:skyVert,fragmentShader:glsl(skyFrag),side:BackSide,depthWrite:false}));sky.renderOrder=-110;this.group.add(sky);this.rebuild(ctx.tier);}
- update(s:FrameState){this.group.position.copy(s.camera.position);this.time.value=s.time;this.pixel.value=Math.min(devicePixelRatio,s.tier.dprCap);}
- rebuild(tier:Tier){const fractions=[.6,.3,.1,.002];for(let i=0;i<this.layers.length;i++)this.layers[i].geometry.setDrawRange(0,Math.ceil(tier.stars*fractions[i]));}
- override dispose(){for(const layer of this.layers){layer.geometry.dispose();layer.material.dispose();}super.dispose();}
+import {
+  AdditiveBlending,
+  BackSide,
+  BufferGeometry,
+  Float32BufferAttribute,
+  Mesh,
+  Points,
+  ShaderMaterial,
+  SphereGeometry,
+} from "three";
+import { SceneChapter, type Ctx, type FrameState } from "./Chapter";
+import type { TaskQueue } from "../core/TaskQueue";
+import type { Tier } from "../config/quality";
+import { random } from "../core/math";
+import { glsl } from "../core/glsl";
+import starVert from "../shaders/star.vert?raw";
+import starFrag from "../shaders/star.frag?raw";
+import skyVert from "../shaders/sky.vert?raw";
+import skyFrag from "../shaders/sky.frag?raw";
+export class Starfield extends SceneChapter {
+  readonly id = "stars";
+  readonly range: [number, number] = [0, 1];
+  private layers: Points<BufferGeometry, ShaderMaterial>[] = [];
+  private time = { value: 0 };
+  private pixel = { value: 1 };
+  override async init(ctx: Ctx, queue: TaskQueue) {
+    await super.init(ctx, queue);
+    const rnd = random(90210);
+    const fractions = [0.6, 0.3, 0.1, 0.002];
+    for (let layer = 0; layer < 4; layer++) {
+      const count = Math.ceil(200000 * fractions[layer]);
+      const p = new Float32Array(count * 3),
+        size = new Float32Array(count),
+        temp = new Float32Array(count),
+        phase = new Float32Array(count),
+        speed = new Float32Array(count);
+      for (let i = 0; i < count; i++) {
+        const theta = rnd() * Math.PI * 2;
+        let latitude = Math.asin(rnd() * 2 - 1);
+        if (rnd() < 0.4)
+          latitude =
+            Math.sqrt(-2 * Math.log(Math.max(rnd(), 0.001))) *
+            Math.cos(rnd() * Math.PI * 2) *
+            0.18;
+        const cos = Math.cos(latitude);
+        p[i * 3] = Math.cos(theta) * cos * 2000;
+        p[i * 3 + 1] = Math.sin(latitude) * 2000;
+        p[i * 3 + 2] = Math.sin(theta) * cos * 2000;
+        size[i] =
+          layer === 3
+            ? 7 + rnd() * 5
+            : 0.75 + layer * 0.8 + Math.pow(rnd(), 4) * 1.8;
+        temp[i] = 3000 + Math.sqrt(rnd()) * 9000;
+        phase[i] = rnd() * 6.28;
+        speed[i] = 0.3 + rnd();
+        if (i % 4096 === 0) await queue.checkpoint();
+      }
+      const geometry = new BufferGeometry();
+      geometry.setAttribute("position", new Float32BufferAttribute(p, 3));
+      geometry.setAttribute("aSize", new Float32BufferAttribute(size, 1));
+      geometry.setAttribute("aTemp", new Float32BufferAttribute(temp, 1));
+      geometry.setAttribute("aPhase", new Float32BufferAttribute(phase, 1));
+      geometry.setAttribute("aSpeed", new Float32BufferAttribute(speed, 1));
+      const material = new ShaderMaterial({
+        vertexShader: starVert,
+        fragmentShader: glsl(starFrag),
+        uniforms: {
+          uTime: this.time,
+          uPixelRatio: this.pixel,
+          uSpikes: { value: layer === 3 ? 1 : 0 },
+        },
+        transparent: true,
+        depthWrite: false,
+        blending: AdditiveBlending,
+      });
+      const points = new Points(geometry, material);
+      points.frustumCulled = false;
+      points.renderOrder = -90;
+      this.layers.push(points);
+      this.group.add(points);
+    }
+    this.group.rotation.set(0.4, 0, -0.35);
+    const sky = new Mesh(
+      new SphereGeometry(2400, 32, 24),
+      new ShaderMaterial({
+        vertexShader: skyVert,
+        fragmentShader: glsl(skyFrag),
+        side: BackSide,
+        depthWrite: false,
+      }),
+    );
+    sky.renderOrder = -110;
+    this.group.add(sky);
+    this.rebuild(ctx.tier);
+  }
+  update(s: FrameState) {
+    this.group.position.copy(s.camera.position);
+    this.time.value = s.time;
+    this.pixel.value = Math.min(devicePixelRatio, s.tier.dprCap);
+  }
+  rebuild(tier: Tier) {
+    const fractions = [0.6, 0.3, 0.1, 0.002];
+    for (let i = 0; i < this.layers.length; i++)
+      this.layers[i].geometry.setDrawRange(
+        0,
+        Math.ceil(tier.stars * fractions[i]),
+      );
+  }
+  override dispose() {
+    for (const layer of this.layers) {
+      layer.geometry.dispose();
+      layer.material.dispose();
+    }
+    super.dispose();
+  }
 }

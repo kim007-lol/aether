@@ -1,1 +1,2 @@
-uniform sampler2D uVolume;varying vec2 vUv;void main(){vec4 volume=texture2D(uVolume,vUv);vec3 background=vec3(.001,.0015,.004);gl_FragColor=vec4(volume.rgb+background*volume.a,1.);}
+#include <galaxy>
+uniform sampler2D uVolume;uniform mat4 uInverseProjection;uniform mat4 uCameraWorld;uniform mat4 uSkyInverse;varying vec2 vUv;void main(){vec4 view=uInverseProjection*vec4(vUv*2.-1.,1.,1.);vec3 ray=normalize(mat3(uSkyInverse)*mat3(uCameraWorld)*view.xyz);vec4 volume=texture2D(uVolume,vUv);gl_FragColor=vec4(volume.rgb+galaxyColor(ray)*volume.a,1.);}

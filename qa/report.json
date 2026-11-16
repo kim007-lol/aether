@@ -1,0 +1,2147 @@
+{
+  "generatedAt": "2026-11-16T09:05:18.990Z",
+  "iteration": "final",
+  "url": "http://127.0.0.1:4173",
+  "rendering": "Chromium hardware request; actual renderer recorded in every sample",
+  "fullSuite": true,
+  "samples": [
+    {
+      "progress": 0,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screenshot": "qa/screenshots/p0-1440x900.png",
+      "pixels": {
+        "mean": 19.054,
+        "standardDeviation": 51.626
+      },
+      "frame": 89,
+      "chapter": "Arrival",
+      "tier": "low",
+      "fps": 30.468568727245895,
+      "calls": 28,
+      "triangles": 147732,
+      "points": 30060,
+      "geometries": 39,
+      "textures": 41,
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 730 (0x00004682) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "halfFloat": true,
+      "minClearance": 1.6518952565389982,
+      "gates": [
+        2.755738285993182,
+        2.763407932539361,
+        2.7869672035408652,
+        2.826819846030313,
+        2.8008148220983955,
+        2.7638658407367718,
+        2.8098975486019766,
+        2.782951295862862,
+        2.7652399092930264,
+        2.830408503799565,
+        2.825738969148301,
+        2.814269072682928
+      ],
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "right": 1440,
+          "bottom": 900,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 0.08,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screenshot": "qa/screenshots/p0.08-1440x900.png",
+      "pixels": {
+        "mean": 25.153,
+        "standardDeviation": 46.661
+      },
+      "frame": 125,
+      "chapter": "Arrival",
+      "tier": "low",
+      "fps": 24.154482156673446,
+      "calls": 28,
+      "triangles": 147732,
+      "points": 30060,
+      "geometries": 39,
+      "textures": 41,
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 730 (0x00004682) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "halfFloat": true,
+      "minClearance": 1.6518952565389982,
+      "gates": [
+        2.755738285993182,
+        2.763407932539361,
+        2.7869672035408652,
+        2.826819846030313,
+        2.8008148220983955,
+        2.7638658407367718,
+        2.8098975486019766,
+        2.782951295862862,
+        2.7652399092930264,
+        2.830408503799565,
+        2.825738969148301,
+        2.814269072682928
+      ],
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "right": 1440,
+          "bottom": 900,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 0.16,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screenshot": "qa/screenshots/p0.16-1440x900.png",
+      "pixels": {
+        "mean": 33.72,
+        "standardDeviation": 41.468
+      },
+      "frame": 155,
+      "chapter": "Atmosphere",
+      "tier": "low",
+      "fps": 20.3202363102696,
+      "calls": 28,
+      "triangles": 147732,
+      "points": 30060,
+      "geometries": 39,
+      "textures": 41,
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 730 (0x00004682) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "halfFloat": true,
+      "minClearance": 1.6518952565389982,
+      "gates": [
+        2.755738285993182,
+        2.763407932539361,
+        2.7869672035408652,
+        2.826819846030313,
+        2.8008148220983955,
+        2.7638658407367718,
+        2.8098975486019766,
+        2.782951295862862,
+        2.7652399092930264,
+        2.830408503799565,
+        2.825738969148301,
+        2.814269072682928
+      ],
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "right": 1440,
+          "bottom": 900,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 0.25,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screenshot": "qa/screenshots/p0.25-1440x900.png",
+      "pixels": {
+        "mean": 32.489,
+        "standardDeviation": 43.299
+      },
+      "frame": 187,
+      "chapter": "Atmosphere",
+      "tier": "low",
+      "fps": 24.973971231952774,
+      "calls": 28,
+      "triangles": 147732,
+      "points": 30060,
+      "geometries": 39,
+      "textures": 41,
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 730 (0x00004682) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "halfFloat": true,
+      "minClearance": 1.6518952565389982,
+      "gates": [
+        2.755738285993182,
+        2.763407932539361,
+        2.7869672035408652,
+        2.826819846030313,
+        2.8008148220983955,
+        2.7638658407367718,
+        2.8098975486019766,
+        2.782951295862862,
+        2.7652399092930264,
+        2.830408503799565,
+        2.825738969148301,
+        2.814269072682928
+      ],
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "right": 1440,
+          "bottom": 900,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 0.34,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screenshot": "qa/screenshots/p0.34-1440x900.png",
+      "pixels": {
+        "mean": 13.796,
+        "standardDeviation": 30.963
+      },
+      "frame": 278,
+      "chapter": "Rings",
+      "tier": "low",
+      "fps": 47.49903893567572,
+      "calls": 30,
+      "triangles": 755700,
+      "points": 90060,
+      "geometries": 39,
+      "textures": 41,
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 730 (0x00004682) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "halfFloat": true,
+      "minClearance": 1.6518952565389982,
+      "gates": [
+        2.755738285993182,
+        2.763407932539361,
+        2.7869672035408652,
+        2.826819846030313,
+        2.8008148220983955,
+        2.7638658407367718,
+        2.8098975486019766,
+        2.782951295862862,
+        2.7652399092930264,
+        2.830408503799565,
+        2.825738969148301,
+        2.814269072682928
+      ],
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "right": 1440,
+          "bottom": 900,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 0.43,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screenshot": "qa/screenshots/p0.43-1440x900.png",
+      "pixels": {
+        "mean": 13.344,
+        "standardDeviation": 33.294
+      },
+      "frame": 371,
+      "chapter": "Rings",
+      "tier": "low",
+      "fps": 49.19431222745239,
+      "calls": 30,
+      "triangles": 755700,
+      "points": 90060,
+      "geometries": 39,
+      "textures": 41,
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 730 (0x00004682) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "halfFloat": true,
+      "minClearance": 1.6518952565389982,
+      "gates": [
+        2.755738285993182,
+        2.763407932539361,
+        2.7869672035408652,
+        2.826819846030313,
+        2.8008148220983955,
+        2.7638658407367718,
+        2.8098975486019766,
+        2.782951295862862,
+        2.7652399092930264,
+        2.830408503799565,
+        2.825738969148301,
+        2.814269072682928
+      ],
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "right": 1440,
+          "bottom": 900,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 0.52,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screenshot": "qa/screenshots/p0.52-1440x900.png",
+      "pixels": {
+        "mean": 13.819,
+        "standardDeviation": 30.754
+      },
+      "frame": 469,
+      "chapter": "Debris",
+      "tier": "low",
+      "fps": 44.53962313302315,
+      "calls": 49,
+      "triangles": 1033800,
+      "points": 94060,
+      "geometries": 42,
+      "textures": 41,
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 730 (0x00004682) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "halfFloat": true,
+      "minClearance": 1.6518952565389982,
+      "gates": [
+        2.755738285993182,
+        2.763407932539361,
+        2.7869672035408652,
+        2.826819846030313,
+        2.8008148220983955,
+        2.7638658407367718,
+        2.8098975486019766,
+        2.782951295862862,
+        2.7652399092930264,
+        2.830408503799565,
+        2.825738969148301,
+        2.814269072682928
+      ],
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "right": 1440,
+          "bottom": 900,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 0.64,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screenshot": "qa/screenshots/p0.64-1440x900.png",
+      "pixels": {
+        "mean": 10.906,
+        "standardDeviation": 32.532
+      },
+      "frame": 508,
+      "chapter": "Debris",
+      "tier": "low",
+      "fps": 24.832557724606616,
+      "calls": 40,
+      "triangles": 1196774,
+      "points": 42063,
+      "geometries": 42,
+      "textures": 41,
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 730 (0x00004682) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "halfFloat": true,
+      "minClearance": 1.6518952565389982,
+      "gates": [
+        2.755738285993182,
+        2.763407932539361,
+        2.7869672035408652,
+        2.826819846030313,
+        2.8008148220983955,
+        2.7638658407367718,
+        2.8098975486019766,
+        2.782951295862862,
+        2.7652399092930264,
+        2.830408503799565,
+        2.825738969148301,
+        2.814269072682928
+      ],
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "right": 1440,
+          "bottom": 900,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 0.78,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screenshot": "qa/screenshots/p0.78-1440x900.png",
+      "pixels": {
+        "mean": 39.801,
+        "standardDeviation": 32.894
+      },
+      "frame": 568,
+      "chapter": "Nebula",
+      "tier": "low",
+      "fps": 26.961069709257515,
+      "calls": 29,
+      "triangles": 1494,
+      "points": 38063,
+      "geometries": 42,
+      "textures": 41,
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 730 (0x00004682) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "halfFloat": true,
+      "minClearance": 1.6518952565389982,
+      "gates": [
+        2.755738285993182,
+        2.763407932539361,
+        2.7869672035408652,
+        2.826819846030313,
+        2.8008148220983955,
+        2.7638658407367718,
+        2.8098975486019766,
+        2.782951295862862,
+        2.7652399092930264,
+        2.830408503799565,
+        2.825738969148301,
+        2.814269072682928
+      ],
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "right": 1440,
+          "bottom": 900,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 0.9,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screenshot": "qa/screenshots/p0.9-1440x900.png",
+      "pixels": {
+        "mean": 86.512,
+        "standardDeviation": 30.761
+      },
+      "frame": 619,
+      "chapter": "Core",
+      "tier": "low",
+      "fps": 23.56413901632982,
+      "calls": 41,
+      "triangles": 329075,
+      "points": 38063,
+      "geometries": 42,
+      "textures": 41,
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 730 (0x00004682) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "halfFloat": true,
+      "minClearance": 1.6518952565389982,
+      "gates": [
+        2.755738285993182,
+        2.763407932539361,
+        2.7869672035408652,
+        2.826819846030313,
+        2.8008148220983955,
+        2.7638658407367718,
+        2.8098975486019766,
+        2.782951295862862,
+        2.7652399092930264,
+        2.830408503799565,
+        2.825738969148301,
+        2.814269072682928
+      ],
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "right": 1440,
+          "bottom": 900,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screenshot": "qa/screenshots/p1-1440x900.png",
+      "pixels": {
+        "mean": 27.648,
+        "standardDeviation": 34.699
+      },
+      "frame": 663,
+      "chapter": "Core",
+      "tier": "low",
+      "fps": 19.67037664213788,
+      "calls": 41,
+      "triangles": 329075,
+      "points": 38063,
+      "geometries": 42,
+      "textures": 41,
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 730 (0x00004682) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "halfFloat": true,
+      "minClearance": 1.6518952565389982,
+      "gates": [
+        2.755738285993182,
+        2.763407932539361,
+        2.7869672035408652,
+        2.826819846030313,
+        2.8008148220983955,
+        2.7638658407367718,
+        2.8098975486019766,
+        2.782951295862862,
+        2.7652399092930264,
+        2.830408503799565,
+        2.825738969148301,
+        2.814269072682928
+      ],
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "right": 1440,
+          "bottom": 900,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 0,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshot": "qa/screenshots/p0-390x844.png",
+      "pixels": {
+        "mean": 26.261,
+        "standardDeviation": 51.059
+      },
+      "frame": 188,
+      "chapter": "Arrival",
+      "tier": "low",
+      "fps": 51.9032122093677,
+      "calls": 28,
+      "triangles": 147732,
+      "points": 30060,
+      "geometries": 37,
+      "textures": 41,
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 730 (0x00004682) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "halfFloat": true,
+      "minClearance": 1.6518952565389982,
+      "gates": [
+        2.755738285993182,
+        2.763407932539361,
+        2.7869672035408652,
+        2.826819846030313,
+        2.8008148220983955,
+        2.7638658407367718,
+        2.8098975486019766,
+        2.782951295862862,
+        2.7652399092930264,
+        2.830408503799565,
+        2.825738969148301,
+        2.814269072682928
+      ],
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844,
+          "top": 0,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 0.08,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshot": "qa/screenshots/p0.08-390x844.png",
+      "pixels": {
+        "mean": 38.022,
+        "standardDeviation": 48.782
+      },
+      "frame": 255,
+      "chapter": "Arrival",
+      "tier": "low",
+      "fps": 39.59687185318111,
+      "calls": 28,
+      "triangles": 147732,
+      "points": 30060,
+      "geometries": 37,
+      "textures": 41,
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 730 (0x00004682) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "halfFloat": true,
+      "minClearance": 1.6518952565389982,
+      "gates": [
+        2.755738285993182,
+        2.763407932539361,
+        2.7869672035408652,
+        2.826819846030313,
+        2.8008148220983955,
+        2.7638658407367718,
+        2.8098975486019766,
+        2.782951295862862,
+        2.7652399092930264,
+        2.830408503799565,
+        2.825738969148301,
+        2.814269072682928
+      ],
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844,
+          "top": 0,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 0.16,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshot": "qa/screenshots/p0.16-390x844.png",
+      "pixels": {
+        "mean": 33.624,
+        "standardDeviation": 42.25
+      },
+      "frame": 330,
+      "chapter": "Atmosphere",
+      "tier": "low",
+      "fps": 48.27030474417419,
+      "calls": 28,
+      "triangles": 147732,
+      "points": 30060,
+      "geometries": 37,
+      "textures": 41,
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 730 (0x00004682) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "halfFloat": true,
+      "minClearance": 1.6518952565389982,
+      "gates": [
+        2.755738285993182,
+        2.763407932539361,
+        2.7869672035408652,
+        2.826819846030313,
+        2.8008148220983955,
+        2.7638658407367718,
+        2.8098975486019766,
+        2.782951295862862,
+        2.7652399092930264,
+        2.830408503799565,
+        2.825738969148301,
+        2.814269072682928
+      ],
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844,
+          "top": 0,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 0.25,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshot": "qa/screenshots/p0.25-390x844.png",
+      "pixels": {
+        "mean": 22.944,
+        "standardDeviation": 40.948
+      },
+      "frame": 398,
+      "chapter": "Atmosphere",
+      "tier": "low",
+      "fps": 46.374069988935915,
+      "calls": 28,
+      "triangles": 147732,
+      "points": 30060,
+      "geometries": 37,
+      "textures": 41,
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 730 (0x00004682) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "halfFloat": true,
+      "minClearance": 1.6518952565389982,
+      "gates": [
+        2.755738285993182,
+        2.763407932539361,
+        2.7869672035408652,
+        2.826819846030313,
+        2.8008148220983955,
+        2.7638658407367718,
+        2.8098975486019766,
+        2.782951295862862,
+        2.7652399092930264,
+        2.830408503799565,
+        2.825738969148301,
+        2.814269072682928
+      ],
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844,
+          "top": 0,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 0.34,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshot": "qa/screenshots/p0.34-390x844.png",
+      "pixels": {
+        "mean": 14.745,
+        "standardDeviation": 35.497
+      },
+      "frame": 564,
+      "chapter": "Rings",
+      "tier": "low",
+      "fps": 100.4323458314522,
+      "calls": 30,
+      "triangles": 755700,
+      "points": 90060,
+      "geometries": 37,
+      "textures": 41,
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 730 (0x00004682) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "halfFloat": true,
+      "minClearance": 1.6518952565389982,
+      "gates": [
+        2.755738285993182,
+        2.763407932539361,
+        2.7869672035408652,
+        2.826819846030313,
+        2.8008148220983955,
+        2.7638658407367718,
+        2.8098975486019766,
+        2.782951295862862,
+        2.7652399092930264,
+        2.830408503799565,
+        2.825738969148301,
+        2.814269072682928
+      ],
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844,
+          "top": 0,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 0.43,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshot": "qa/screenshots/p0.43-390x844.png",
+      "pixels": {
+        "mean": 16.573,
+        "standardDeviation": 39.902
+      },
+      "frame": 733,
+      "chapter": "Rings",
+      "tier": "low",
+      "fps": 99.83725688826122,
+      "calls": 30,
+      "triangles": 755700,
+      "points": 90060,
+      "geometries": 37,
+      "textures": 41,
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 730 (0x00004682) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "halfFloat": true,
+      "minClearance": 1.6518952565389982,
+      "gates": [
+        2.755738285993182,
+        2.763407932539361,
+        2.7869672035408652,
+        2.826819846030313,
+        2.8008148220983955,
+        2.7638658407367718,
+        2.8098975486019766,
+        2.782951295862862,
+        2.7652399092930264,
+        2.830408503799565,
+        2.825738969148301,
+        2.814269072682928
+      ],
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844,
+          "top": 0,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 0.52,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshot": "qa/screenshots/p0.52-390x844.png",
+      "pixels": {
+        "mean": 17.199,
+        "standardDeviation": 32.594
+      },
+      "frame": 904,
+      "chapter": "Debris",
+      "tier": "low",
+      "fps": 100.0383376641227,
+      "calls": 48,
+      "triangles": 1016980,
+      "points": 94060,
+      "geometries": 41,
+      "textures": 41,
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 730 (0x00004682) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "halfFloat": true,
+      "minClearance": 1.6518952565389982,
+      "gates": [
+        2.755738285993182,
+        2.763407932539361,
+        2.7869672035408652,
+        2.826819846030313,
+        2.8008148220983955,
+        2.7638658407367718,
+        2.8098975486019766,
+        2.782951295862862,
+        2.7652399092930264,
+        2.830408503799565,
+        2.825738969148301,
+        2.814269072682928
+      ],
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844,
+          "top": 0,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 0.64,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshot": "qa/screenshots/p0.64-390x844.png",
+      "pixels": {
+        "mean": 12.929,
+        "standardDeviation": 34.41
+      },
+      "frame": 998,
+      "chapter": "Debris",
+      "tier": "low",
+      "fps": 57.158619727041255,
+      "calls": 38,
+      "triangles": 1163134,
+      "points": 42063,
+      "geometries": 41,
+      "textures": 41,
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 730 (0x00004682) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "halfFloat": true,
+      "minClearance": 1.6518952565389982,
+      "gates": [
+        2.755738285993182,
+        2.763407932539361,
+        2.7869672035408652,
+        2.826819846030313,
+        2.8008148220983955,
+        2.7638658407367718,
+        2.8098975486019766,
+        2.782951295862862,
+        2.7652399092930264,
+        2.830408503799565,
+        2.825738969148301,
+        2.814269072682928
+      ],
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844,
+          "top": 0,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 0.78,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshot": "qa/screenshots/p0.78-390x844.png",
+      "pixels": {
+        "mean": 41.526,
+        "standardDeviation": 33.239
+      },
+      "frame": 1163,
+      "chapter": "Nebula",
+      "tier": "low",
+      "fps": 96.30903382258208,
+      "calls": 29,
+      "triangles": 1494,
+      "points": 38063,
+      "geometries": 41,
+      "textures": 41,
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 730 (0x00004682) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "halfFloat": true,
+      "minClearance": 1.6518952565389982,
+      "gates": [
+        2.755738285993182,
+        2.763407932539361,
+        2.7869672035408652,
+        2.826819846030313,
+        2.8008148220983955,
+        2.7638658407367718,
+        2.8098975486019766,
+        2.782951295862862,
+        2.7652399092930264,
+        2.830408503799565,
+        2.825738969148301,
+        2.814269072682928
+      ],
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844,
+          "top": 0,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 0.9,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshot": "qa/screenshots/p0.9-390x844.png",
+      "pixels": {
+        "mean": 79.978,
+        "standardDeviation": 36.001
+      },
+      "frame": 1275,
+      "chapter": "Core",
+      "tier": "low",
+      "fps": 63.649622096610685,
+      "calls": 41,
+      "triangles": 329075,
+      "points": 38063,
+      "geometries": 41,
+      "textures": 41,
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 730 (0x00004682) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "halfFloat": true,
+      "minClearance": 1.6518952565389982,
+      "gates": [
+        2.755738285993182,
+        2.763407932539361,
+        2.7869672035408652,
+        2.826819846030313,
+        2.8008148220983955,
+        2.7638658407367718,
+        2.8098975486019766,
+        2.782951295862862,
+        2.7652399092930264,
+        2.830408503799565,
+        2.825738969148301,
+        2.814269072682928
+      ],
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844,
+          "top": 0,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 1,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshot": "qa/screenshots/p1-390x844.png",
+      "pixels": {
+        "mean": 26.703,
+        "standardDeviation": 40.768
+      },
+      "frame": 1365,
+      "chapter": "Core",
+      "tier": "low",
+      "fps": 57.27118255193303,
+      "calls": 41,
+      "triangles": 329075,
+      "points": 38063,
+      "geometries": 41,
+      "textures": 41,
+      "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 730 (0x00004682) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "halfFloat": true,
+      "minClearance": 1.6518952565389982,
+      "gates": [
+        2.755738285993182,
+        2.763407932539361,
+        2.7869672035408652,
+        2.826819846030313,
+        2.8008148220983955,
+        2.7638658407367718,
+        2.8098975486019766,
+        2.782951295862862,
+        2.7652399092930264,
+        2.830408503799565,
+        2.825738969148301,
+        2.814269072682928
+      ],
+      "layout": {
+        "width": 390,
+        "scrollWidth": 390,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844,
+          "top": 0,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        }
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "loader counter and duration",
+      "page": "1440x900",
+      "status": "PASS",
+      "evidence": {
+        "loader": {
+          "counts": [
+            "000",
+            "008",
+            "009",
+            "012",
+            "013",
+            "014",
+            "015",
+            "016",
+            "017",
+            "018",
+            "019",
+            "020",
+            "021",
+            "022",
+            "023",
+            "024",
+            "025",
+            "026",
+            "027",
+            "028",
+            "029",
+            "030",
+            "031",
+            "032",
+            "033",
+            "034",
+            "035",
+            "036",
+            "037",
+            "038",
+            "039",
+            "040",
+            "046",
+            "050",
+            "051",
+            "052",
+            "054",
+            "055",
+            "062",
+            "071",
+            "076",
+            "083",
+            "094",
+            "100"
+          ],
+          "status": "Calibrating orbit",
+          "wordmark": "AETHER",
+          "removedAt": 16524.60000000894,
+          "loadedAt": 14875
+        },
+        "longTasks": [
+          {
+            "start": 75.20000000298023,
+            "duration": 279
+          },
+          {
+            "start": 360.20000000298023,
+            "duration": 361
+          },
+          {
+            "start": 1163.1000000089407,
+            "duration": 143
+          },
+          {
+            "start": 3436.2999999970198,
+            "duration": 140
+          },
+          {
+            "start": 3581.7000000029802,
+            "duration": 54
+          },
+          {
+            "start": 8436.70000000298,
+            "duration": 181
+          },
+          {
+            "start": 8623.29999999702,
+            "duration": 3987
+          },
+          {
+            "start": 12615.90000000596,
+            "duration": 98
+          },
+          {
+            "start": 12719.60000000894,
+            "duration": 116
+          },
+          {
+            "start": 12840.20000000298,
+            "duration": 279
+          },
+          {
+            "start": 13718.90000000596,
+            "duration": 996
+          },
+          {
+            "start": 14715.10000000894,
+            "duration": 160
+          }
+        ],
+        "cls": 0.0025436907061469997
+      }
+    },
+    {
+      "name": "sample progress 0",
+      "page": "1440x900",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0-1440x900.png",
+        "pixels": {
+          "mean": 19.054,
+          "standardDeviation": 51.626
+        },
+        "calls": 28,
+        "triangles": 147732
+      }
+    },
+    {
+      "name": "sample progress 0.08",
+      "page": "1440x900",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0.08-1440x900.png",
+        "pixels": {
+          "mean": 25.153,
+          "standardDeviation": 46.661
+        },
+        "calls": 28,
+        "triangles": 147732
+      }
+    },
+    {
+      "name": "sample progress 0.16",
+      "page": "1440x900",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0.16-1440x900.png",
+        "pixels": {
+          "mean": 33.72,
+          "standardDeviation": 41.468
+        },
+        "calls": 28,
+        "triangles": 147732
+      }
+    },
+    {
+      "name": "sample progress 0.25",
+      "page": "1440x900",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0.25-1440x900.png",
+        "pixels": {
+          "mean": 32.489,
+          "standardDeviation": 43.299
+        },
+        "calls": 28,
+        "triangles": 147732
+      }
+    },
+    {
+      "name": "sample progress 0.34",
+      "page": "1440x900",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0.34-1440x900.png",
+        "pixels": {
+          "mean": 13.796,
+          "standardDeviation": 30.963
+        },
+        "calls": 30,
+        "triangles": 755700
+      }
+    },
+    {
+      "name": "sample progress 0.43",
+      "page": "1440x900",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0.43-1440x900.png",
+        "pixels": {
+          "mean": 13.344,
+          "standardDeviation": 33.294
+        },
+        "calls": 30,
+        "triangles": 755700
+      }
+    },
+    {
+      "name": "sample progress 0.52",
+      "page": "1440x900",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0.52-1440x900.png",
+        "pixels": {
+          "mean": 13.819,
+          "standardDeviation": 30.754
+        },
+        "calls": 49,
+        "triangles": 1033800
+      }
+    },
+    {
+      "name": "sample progress 0.64",
+      "page": "1440x900",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0.64-1440x900.png",
+        "pixels": {
+          "mean": 10.906,
+          "standardDeviation": 32.532
+        },
+        "calls": 40,
+        "triangles": 1196774
+      }
+    },
+    {
+      "name": "sample progress 0.78",
+      "page": "1440x900",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0.78-1440x900.png",
+        "pixels": {
+          "mean": 39.801,
+          "standardDeviation": 32.894
+        },
+        "calls": 29,
+        "triangles": 1494
+      }
+    },
+    {
+      "name": "sample progress 0.9",
+      "page": "1440x900",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0.9-1440x900.png",
+        "pixels": {
+          "mean": 86.512,
+          "standardDeviation": 30.761
+        },
+        "calls": 41,
+        "triangles": 329075
+      }
+    },
+    {
+      "name": "sample progress 1",
+      "page": "1440x900",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p1-1440x900.png",
+        "pixels": {
+          "mean": 27.648,
+          "standardDeviation": 34.699
+        },
+        "calls": 41,
+        "triangles": 329075
+      }
+    },
+    {
+      "name": "solid mesh path clearance and near-miss gates",
+      "page": "1440x900",
+      "status": "PASS",
+      "evidence": {
+        "minimum": 1.6518952565389982,
+        "gates": [
+          2.755738285993182,
+          2.763407932539361,
+          2.7869672035408652,
+          2.826819846030313,
+          2.8008148220983955,
+          2.7638658407367718,
+          2.8098975486019766,
+          2.782951295862862,
+          2.7652399092930264,
+          2.830408503799565,
+          2.825738969148301,
+          2.814269072682928
+        ]
+      }
+    },
+    {
+      "name": "keyboard navigation all seven keys",
+      "page": "desktop",
+      "status": "PASS",
+      "evidence": [
+        {
+          "key": "ArrowDown",
+          "expected": 0.25,
+          "actual": 0.2397217778567764
+        },
+        {
+          "key": "PageDown",
+          "expected": 0.43,
+          "actual": 0.4182079886781499
+        },
+        {
+          "key": "Space",
+          "expected": 0.64,
+          "actual": 0.6236198235230694
+        },
+        {
+          "key": "ArrowUp",
+          "expected": 0.43,
+          "actual": 0.4455214688694256
+        },
+        {
+          "key": "PageUp",
+          "expected": 0.25,
+          "actual": 0.26596072299086554
+        },
+        {
+          "key": "End",
+          "expected": 1,
+          "actual": 0.9877774270824773
+        },
+        {
+          "key": "Home",
+          "expected": 0,
+          "actual": 0.017189334186962748
+        }
+      ]
+    },
+    {
+      "name": "semantic labels, skip link, target sizes and focus",
+      "page": "desktop",
+      "status": "PASS",
+      "evidence": {
+        "header": true,
+        "sections": 6,
+        "labelled": true,
+        "nav": true,
+        "firstFocusable": "Skip to content",
+        "live": true,
+        "canvasHidden": "true",
+        "buttons": [
+          {
+            "name": "Aether — return to arrival",
+            "width": 107.765625,
+            "height": 44
+          },
+          {
+            "name": "Enable ambient sound",
+            "width": 111.765625,
+            "height": 44
+          },
+          {
+            "name": "Quality: Low. Change quality",
+            "width": 103.40625,
+            "height": 44
+          },
+          {
+            "name": "Go to 01 — Arrival",
+            "width": 83.328125,
+            "height": 44
+          },
+          {
+            "name": "Go to 02 — Atmosphere",
+            "width": 94,
+            "height": 44
+          },
+          {
+            "name": "Go to 03 — Rings",
+            "width": 58,
+            "height": 44
+          },
+          {
+            "name": "Go to 04 — Debris",
+            "width": 65.203125,
+            "height": 44
+          },
+          {
+            "name": "Go to 05 — Nebula",
+            "width": 65.203125,
+            "height": 44
+          },
+          {
+            "name": "Go to 06 — Core",
+            "width": 51.1875,
+            "height": 44
+          },
+          {
+            "name": "Begin again",
+            "width": 182.140625,
+            "height": 52
+          },
+          {
+            "name": "Replay the descent",
+            "width": 123.21875,
+            "height": 44
+          }
+        ],
+        "outline": {
+          "width": "2px",
+          "style": "solid"
+        }
+      }
+    },
+    {
+      "name": "pointer parallax and desktop cursor",
+      "page": "desktop",
+      "status": "PASS",
+      "evidence": {
+        "state": {
+          "reduced": false,
+          "cameraParallaxEnabled": true,
+          "cameraPosition": [
+            -0.3669468154594311,
+            7.101089346913273,
+            50.8400422022225
+          ],
+          "cameraRotation": [
+            -0.03589573552547381,
+            -0.01881126797044857,
+            0.0025906919313973416,
+            "XYZ"
+          ],
+          "pointer": [
+            0.4872141268881804,
+            0.33600974268150374
+          ],
+          "target": 0,
+          "audio": false,
+          "audioPreferred": false,
+          "shockwaves": 0,
+          "automatic": false,
+          "steps": 0
+        },
+        "cursor": true,
+        "opacity": "1"
+      }
+    },
+    {
+      "name": "sound off by default, toggle and persistence without autoplay",
+      "page": "desktop",
+      "status": "PASS",
+      "evidence": {
+        "reduced": false,
+        "cameraParallaxEnabled": true,
+        "cameraPosition": [
+          -0.24300812535572766,
+          7.049705070058142,
+          51.99983699772118
+        ],
+        "cameraRotation": [
+          -0.03939700951130754,
+          -0.0008111527773135516,
+          -0.00005102101792424409,
+          "XYZ"
+        ],
+        "pointer": [
+          0,
+          0
+        ],
+        "target": 0,
+        "audio": false,
+        "audioPreferred": true,
+        "shockwaves": 0,
+        "automatic": false,
+        "steps": 0
+      }
+    },
+    {
+      "name": "Core shockwave on click",
+      "page": "desktop",
+      "status": "PASS",
+      "evidence": {
+        "before": 0,
+        "after": 1
+      }
+    },
+    {
+      "name": "Begin again and Replay the descent",
+      "page": "desktop",
+      "status": "PASS",
+      "evidence": {
+        "early": 0.059,
+        "end": 0.9953249999999951,
+        "durationSeconds": 40
+      }
+    },
+    {
+      "name": "memory remains stable after five full scroll loops",
+      "page": "desktop",
+      "status": "PASS",
+      "evidence": {
+        "initial": {
+          "geometries": 43,
+          "textures": 41
+        },
+        "loops": [
+          {
+            "loop": 1,
+            "geometries": 43,
+            "textures": 41
+          },
+          {
+            "loop": 2,
+            "geometries": 43,
+            "textures": 41
+          },
+          {
+            "loop": 3,
+            "geometries": 43,
+            "textures": 41
+          },
+          {
+            "loop": 4,
+            "geometries": 43,
+            "textures": 41
+          },
+          {
+            "loop": 5,
+            "geometries": 43,
+            "textures": 41
+          }
+        ]
+      }
+    },
+    {
+      "name": "automatic quality steps down once under slow frames",
+      "page": "desktop",
+      "status": "PASS",
+      "evidence": {
+        "tier": "low",
+        "steps": 1
+      }
+    },
+    {
+      "name": "context loss overlay and restoration reload",
+      "page": "desktop",
+      "status": "PASS",
+      "evidence": {
+        "restored": true
+      }
+    },
+    {
+      "name": "runtime performance observations",
+      "page": "1440x900",
+      "status": "MEASURED",
+      "evidence": {
+        "cls": 0.002605865710629697,
+        "longTasksAfterLoader": []
+      }
+    },
+    {
+      "name": "loader counter and duration",
+      "page": "390x844",
+      "status": "PASS",
+      "evidence": {
+        "loader": {
+          "counts": [
+            "000",
+            "003",
+            "004",
+            "005",
+            "006",
+            "007",
+            "009",
+            "010",
+            "011",
+            "012",
+            "013",
+            "014",
+            "015",
+            "017",
+            "018",
+            "019",
+            "020",
+            "021",
+            "022",
+            "023",
+            "024",
+            "025",
+            "026",
+            "027",
+            "028",
+            "029",
+            "030",
+            "031",
+            "032",
+            "033",
+            "034",
+            "035",
+            "036",
+            "037",
+            "038",
+            "039",
+            "040",
+            "045",
+            "049",
+            "050",
+            "051",
+            "052",
+            "054",
+            "057",
+            "065",
+            "066",
+            "074",
+            "075",
+            "078",
+            "083",
+            "084",
+            "085",
+            "086",
+            "087",
+            "094",
+            "097",
+            "098",
+            "099",
+            "100"
+          ],
+          "status": "Calibrating orbit",
+          "wordmark": "AETHER",
+          "removedAt": 5329.5999999940395,
+          "loadedAt": 3517
+        },
+        "longTasks": [
+          {
+            "start": 99.29999999701977,
+            "duration": 69
+          },
+          {
+            "start": 2604,
+            "duration": 131
+          },
+          {
+            "start": 2740.0999999940395,
+            "duration": 51
+          },
+          {
+            "start": 3120.8999999910593,
+            "duration": 63
+          },
+          {
+            "start": 3184.7000000029802,
+            "duration": 51
+          }
+        ],
+        "cls": 0
+      }
+    },
+    {
+      "name": "sample progress 0",
+      "page": "390x844",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0-390x844.png",
+        "pixels": {
+          "mean": 26.261,
+          "standardDeviation": 51.059
+        },
+        "calls": 28,
+        "triangles": 147732
+      }
+    },
+    {
+      "name": "sample progress 0.08",
+      "page": "390x844",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0.08-390x844.png",
+        "pixels": {
+          "mean": 38.022,
+          "standardDeviation": 48.782
+        },
+        "calls": 28,
+        "triangles": 147732
+      }
+    },
+    {
+      "name": "sample progress 0.16",
+      "page": "390x844",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0.16-390x844.png",
+        "pixels": {
+          "mean": 33.624,
+          "standardDeviation": 42.25
+        },
+        "calls": 28,
+        "triangles": 147732
+      }
+    },
+    {
+      "name": "sample progress 0.25",
+      "page": "390x844",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0.25-390x844.png",
+        "pixels": {
+          "mean": 22.944,
+          "standardDeviation": 40.948
+        },
+        "calls": 28,
+        "triangles": 147732
+      }
+    },
+    {
+      "name": "sample progress 0.34",
+      "page": "390x844",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0.34-390x844.png",
+        "pixels": {
+          "mean": 14.745,
+          "standardDeviation": 35.497
+        },
+        "calls": 30,
+        "triangles": 755700
+      }
+    },
+    {
+      "name": "sample progress 0.43",
+      "page": "390x844",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0.43-390x844.png",
+        "pixels": {
+          "mean": 16.573,
+          "standardDeviation": 39.902
+        },
+        "calls": 30,
+        "triangles": 755700
+      }
+    },
+    {
+      "name": "sample progress 0.52",
+      "page": "390x844",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0.52-390x844.png",
+        "pixels": {
+          "mean": 17.199,
+          "standardDeviation": 32.594
+        },
+        "calls": 48,
+        "triangles": 1016980
+      }
+    },
+    {
+      "name": "sample progress 0.64",
+      "page": "390x844",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0.64-390x844.png",
+        "pixels": {
+          "mean": 12.929,
+          "standardDeviation": 34.41
+        },
+        "calls": 38,
+        "triangles": 1163134
+      }
+    },
+    {
+      "name": "sample progress 0.78",
+      "page": "390x844",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0.78-390x844.png",
+        "pixels": {
+          "mean": 41.526,
+          "standardDeviation": 33.239
+        },
+        "calls": 29,
+        "triangles": 1494
+      }
+    },
+    {
+      "name": "sample progress 0.9",
+      "page": "390x844",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0.9-390x844.png",
+        "pixels": {
+          "mean": 79.978,
+          "standardDeviation": 36.001
+        },
+        "calls": 41,
+        "triangles": 329075
+      }
+    },
+    {
+      "name": "sample progress 1",
+      "page": "390x844",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p1-390x844.png",
+        "pixels": {
+          "mean": 26.703,
+          "standardDeviation": 40.768
+        },
+        "calls": 41,
+        "triangles": 329075
+      }
+    },
+    {
+      "name": "solid mesh path clearance and near-miss gates",
+      "page": "390x844",
+      "status": "PASS",
+      "evidence": {
+        "minimum": 1.6518952565389982,
+        "gates": [
+          2.755738285993182,
+          2.763407932539361,
+          2.7869672035408652,
+          2.826819846030313,
+          2.8008148220983955,
+          2.7638658407367718,
+          2.8098975486019766,
+          2.782951295862862,
+          2.7652399092930264,
+          2.830408503799565,
+          2.825738969148301,
+          2.814269072682928
+        ]
+      }
+    },
+    {
+      "name": "native touch swipe scroll",
+      "page": "390x844",
+      "status": "PASS",
+      "evidence": {
+        "target": 0.05702014218009479
+      }
+    },
+    {
+      "name": "custom cursor hidden on touch",
+      "page": "390x844",
+      "status": "PASS",
+      "evidence": {
+        "display": "none",
+        "opacity": "0"
+      }
+    },
+    {
+      "name": "Core shockwave on tap",
+      "page": "390x844",
+      "status": "PASS",
+      "evidence": {
+        "before": 0,
+        "after": 1
+      }
+    },
+    {
+      "name": "orientation resize and canvas aspect",
+      "page": "390x844",
+      "status": "PASS",
+      "evidence": {
+        "w": 844,
+        "h": 390,
+        "width": 844,
+        "height": 390,
+        "overflow": false
+      }
+    },
+    {
+      "name": "runtime performance observations",
+      "page": "390x844",
+      "status": "MEASURED",
+      "evidence": {
+        "cls": 0,
+        "longTasksAfterLoader": [
+          {
+            "start": 30588.5,
+            "duration": 64
+          },
+          {
+            "start": 30745,
+            "duration": 69
+          }
+        ]
+      }
+    },
+    {
+      "name": "reduced motion disables parallax and shockwave",
+      "page": "reduced-motion",
+      "status": "PASS",
+      "evidence": {
+        "reduced": true,
+        "cameraParallaxEnabled": false,
+        "cameraPosition": [
+          190,
+          -2.2823407878111253,
+          -267.61069629201717
+        ],
+        "cameraRotation": [
+          -0.09065988720074539,
+          0,
+          0,
+          "XYZ"
+        ],
+        "pointer": [
+          0.5228659034121595,
+          0.510829721478501
+        ],
+        "target": 1,
+        "audio": false,
+        "audioPreferred": false,
+        "shockwaves": 0,
+        "automatic": false,
+        "steps": 0
+      }
+    },
+    {
+      "name": "forceFallback renders complete designed copy",
+      "page": "fallback",
+      "status": "PASS",
+      "evidence": {
+        "sections": 6,
+        "noOverflow": true
+      }
+    },
+    {
+      "name": "missing WebGL2 automatically selects fallback",
+      "page": "WebGL2-unavailable",
+      "status": "PASS",
+      "evidence": {
+        "fallback": true
+      }
+    }
+  ],
+  "console": [],
+  "externalRequests": [],
+  "pageErrors": [],
+  "navigation": [
+    {
+      "page": "1440x900",
+      "milliseconds": 16539
+    },
+    {
+      "page": "audio-reload",
+      "milliseconds": 11420
+    },
+    {
+      "page": "390x844",
+      "milliseconds": 5342
+    },
+    {
+      "page": "reduced-motion",
+      "milliseconds": 5380
+    }
+  ],
+  "memoryLoops": [
+    {
+      "loop": 1,
+      "geometries": 43,
+      "textures": 41
+    },
+    {
+      "loop": 2,
+      "geometries": 43,
+      "textures": 41
+    },
+    {
+      "loop": 3,
+      "geometries": 43,
+      "textures": 41
+    },
+    {
+      "loop": 4,
+      "geometries": 43,
+      "textures": 41
+    },
+    {
+      "loop": 5,
+      "geometries": 43,
+      "textures": 41
+    }
+  ],
+  "fpsSummary": {
+    "min": 19.67037664213788,
+    "max": 100.4323458314522,
+    "mean": 49.8645105996494
+  },
+  "renderers": [
+    "ANGLE (Intel, Intel(R) UHD Graphics 730 (0x00004682) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+  ],
+  "softwareRendering": false,
+  "passed": true,
+  "summary": {
+    "samples": 22,
+    "checksPassed": 42,
+    "checksFailed": 0,
+    "consoleIssues": 0,
+    "pageErrors": 0,
+    "externalRequests": 0
+  }
+}

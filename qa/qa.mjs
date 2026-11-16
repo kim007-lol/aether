@@ -7,6 +7,7 @@ const { PNG } = pngjs;
 const URL_BASE = process.env.QA_URL ?? "http://127.0.0.1:4173";
 const ITERATION = process.env.QA_ITERATION ?? "final";
 const FAST = process.env.QA_FAST === "1";
+const SOFTWARE = process.env.QA_SOFTWARE === "1";
 const SCREEN_DIR =
   ITERATION === "final"
     ? "qa/screenshots"
@@ -24,8 +25,9 @@ const report = {
   generatedAt: new Date().toISOString(),
   iteration: ITERATION,
   url: URL_BASE,
-  rendering:
-    "Chromium ANGLE SwiftShader software; FPS is not real-GPU performance",
+  rendering: SOFTWARE
+    ? "Chromium ANGLE SwiftShader software; FPS is not real-GPU performance"
+    : "Chromium hardware request; actual renderer recorded in every sample",
   fullSuite: !FAST,
   samples: [],
   checks: [],
@@ -34,14 +36,15 @@ const report = {
   pageErrors: [],
   navigation: [],
   memoryLoops: [],
-  softwareFps: {},
+  fpsSummary: {},
 };
 await mkdir(SCREEN_DIR, { recursive: true });
 const browser = await chromium.launch({
   headless: process.env.QA_HEADLESS === "1",
   args: [
-    "--use-angle=swiftshader",
-    "--enable-unsafe-swiftshader",
+    ...(SOFTWARE
+      ? ["--use-angle=swiftshader", "--enable-unsafe-swiftshader"]
+      : []),
     "--ignore-gpu-blocklist",
     "--disable-gpu-watchdog",
   ],
@@ -178,8 +181,17 @@ async function openReady(page, label, query = "?qa=1&tier=low") {
   report.navigation.push({ page: label, milliseconds: Date.now() - started });
 }
 async function setProgress(page, progress, delay = 1500) {
+  await page.bringToFront();
+  const previousFrame = await page.evaluate(
+    () => window.__AETHER__.getInfo().frame,
+  );
   await page.evaluate((p) => window.__AETHER__.setProgress(p), progress);
   if (delay) await page.waitForTimeout(delay);
+  await page.waitForFunction(
+    (f) => window.__AETHER__.getInfo().frame > f,
+    previousFrame,
+    { timeout: 30000 },
+  );
   await page.evaluate(
     () =>
       new Promise((resolve) =>
@@ -304,12 +316,10 @@ async function semanticTest(page) {
     ),
   );
   await page.keyboard.press("Tab");
-  const outline = await page
-    .locator(":focus")
-    .evaluate((element) => ({
-      width: getComputedStyle(element).outlineWidth,
-      style: getComputedStyle(element).outlineStyle,
-    }));
+  const outline = await page.locator(":focus").evaluate((element) => ({
+    width: getComputedStyle(element).outlineWidth,
+    style: getComputedStyle(element).outlineStyle,
+  }));
   assert(parseFloat(outline.width) >= 2 && outline.style !== "none");
   return { ...result, outline };
 }
@@ -319,8 +329,17 @@ async function desktopFeatures(page, context) {
     semanticTest(page),
   );
   await check("pointer parallax and desktop cursor", async () => {
-    await page.mouse.move(1300, 200);
-    await page.waitForTimeout(1200);
+    await page.bringToFront();
+    await page.mouse.move(720, 450);
+    await page.mouse.move(1300, 200, { steps: 8 });
+    await page.waitForFunction(
+      () => {
+        const p = window.__AETHER__.getState().pointer;
+        return p[0] > 0.3 && p[1] > 0.2;
+      },
+      null,
+      { timeout: 10000 },
+    );
     const state = await page.evaluate(() => ({
       state: window.__AETHER__.getState(),
       cursor: document.body.classList.contains("cursor-active"),
@@ -331,6 +350,7 @@ async function desktopFeatures(page, context) {
         state.state.pointer[1] > 0.2 &&
         state.cursor &&
         Number(state.opacity) > 0,
+      JSON.stringify(state),
     );
     return state;
   });
@@ -375,7 +395,7 @@ async function desktopFeatures(page, context) {
     const after = await page.evaluate(
       () => window.__AETHER__.getState().shockwaves,
     );
-    assert(after > before);
+    assert.equal(after, before + 1);
     return { before, after };
   });
   await check("Begin again and Replay the descent", async () => {
@@ -581,12 +601,10 @@ try {
       await check(
         "custom cursor hidden on touch",
         async () => {
-          const data = await page
-            .locator(".cursor-dot")
-            .evaluate((el) => ({
-              display: getComputedStyle(el).display,
-              opacity: getComputedStyle(el).opacity,
-            }));
+          const data = await page.locator(".cursor-dot").evaluate((el) => ({
+            display: getComputedStyle(el).display,
+            opacity: getComputedStyle(el).opacity,
+          }));
           assert(data.display === "none" || Number(data.opacity) === 0);
           return data;
         },
@@ -672,8 +690,8 @@ try {
         );
         assert(
           state.reduced &&
-            state.shockwaves === 0 &&
-            state.pointer.every((value) => value === 0),
+            !state.cameraParallaxEnabled &&
+            state.shockwaves === 0,
         );
         await reducedPage.screenshot({
           path: SCREEN_DIR + "/reduced-motion.png",
@@ -750,13 +768,17 @@ try {
 } finally {
   await browser.close();
   const fps = report.samples.map((sample) => sample.fps);
-  report.softwareFps = fps.length
+  report.fpsSummary = fps.length
     ? {
         min: Math.min(...fps),
         max: Math.max(...fps),
         mean: fps.reduce((a, b) => a + b, 0) / fps.length,
       }
     : {};
+  report.renderers = [...new Set(report.samples.map((s) => s.gpu))];
+  report.softwareRendering = report.renderers.some((s) =>
+    /swiftshader|software|llvmpipe/i.test(s),
+  );
   report.passed =
     !report.fatal &&
     report.checks.every((check) => check.status !== "FAIL") &&

@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-16",
+  "cleanInstall": {
+    "command": "npm ci --no-fund --no-audit",
+    "pass": true,
+    "packages": 131,
+    "retryReason": "Windows native binding heldbytask-ownedViteservers;stoppedserversbefore retry"
+  },
+  "typecheck": {
+    "command": "npm run typecheck",
+    "pass": true,
+    "errors": 0
+  },
+  "lint": {
+    "command": "npm run lint",
+    "pass": true,
+    "errors": 0,
+    "warnings": 0
+  },
+  "build": {
+    "command": "npm run build",
+    "pass": true,
+    "gzipBytes": 327998
+  },
+  "singleThree": {
+    "command": "npm ls three",
+    "version": "0.187.0",
+    "pass": true
+  },
+  "geometry": {
+    "command": "npm run qa:geometry",
+    "pass": true
+  },
+  "qa": {
+    "command": "npm run qa",
+    "samples": 22,
+    "checksPassed": 42,
+    "checksFailed": 0,
+    "consoleIssues": 0,
+    "pageErrors": 0,
+    "externalRequests": 0,
+    "passed": true
+  },
+  "supplemental": {
+    "command": "node qa/supplemental.mjs",
+    "pass": true
+  },
+  "contrast": {
+    "command": "node qa/contrast.mjs",
+    "pass": false
+  }
+}

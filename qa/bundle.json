@@ -1,10 +1,10 @@
 {
-  "totalGzip": 327165,
+  "totalGzip": 327998,
   "chunks": [
     {
-      "file": "index-Dc-dlY7T.js",
-      "bytes": 927687,
-      "gzip": 285963
+      "file": "index-CMkXwEf3.js",
+      "bytes": 930617,
+      "gzip": 286796
     },
     {
       "file": "lil-gui.esm-1mMPH2jB.js",

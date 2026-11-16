@@ -106,6 +106,7 @@ export function attachRockMotion(
 ): void {
   const axes = new Float32Array(count * 3);
   const speeds = new Float32Array(count);
+  const indices = new Float32Array(count);
   let state = seed | 0;
   const random = () => {
     state = Math.imul(state, 1664525) + 1013904223;
@@ -116,6 +117,7 @@ export function attachRockMotion(
       y = random() * 2 - 1,
       z = random() * 2 - 1;
     const length = Math.sqrt(x * x + y * y + z * z) || 1;
+    indices[i] = i;
     axes[i * 3] = x / length;
     axes[i * 3 + 1] = y / length;
     axes[i * 3 + 2] = z / length;
@@ -123,12 +125,18 @@ export function attachRockMotion(
   }
   geometry.setAttribute("aRockAxis", new InstancedBufferAttribute(axes, 3));
   geometry.setAttribute("aRockSpeed", new InstancedBufferAttribute(speeds, 1));
+  geometry.setAttribute("aRockIndex", new InstancedBufferAttribute(indices, 1));
 }
 
 export function createRockMaterial(
   textures: RockTextures,
   time: { value: number },
-  options: { ring?: boolean; tumble?: boolean } = {},
+  options: {
+    ring?: boolean;
+    tumble?: boolean;
+    visibleCount?: { value: number };
+    feather?: { value: number };
+  } = {},
 ): MeshStandardMaterial {
   const material = new MeshStandardMaterial({
     color: new Color("#c6b6a2"),
@@ -139,6 +147,10 @@ export function createRockMaterial(
     shader.uniforms.uRockAlbedo = { value: textures.albedo };
     shader.uniforms.uRockNormal = { value: textures.normal };
     shader.uniforms.uRockTime = time;
+    if (options.visibleCount) {
+      shader.uniforms.uRockVisible = options.visibleCount;
+      shader.uniforms.uRockFeather = options.feather!;
+    }
     shader.vertexShader = shader.vertexShader.replace(
       "#include <common>",
       `#include <common>
@@ -147,6 +159,7 @@ export function createRockMaterial(
       varying vec3 vRockNormal;
       varying vec3 vRockWorld;
       varying float vRockCavity;
+      ${options.visibleCount ? "attribute float aRockIndex; uniform float uRockVisible; uniform float uRockFeather; varying float vRockReveal;" : ""}
       uniform float uRockTime;
       ${options.tumble ? "attribute vec3 aRockAxis; attribute float aRockSpeed;" : ""}
       vec3 rockRotate(vec3 p,vec3 axis,float angle){ float c=cos(angle),s=sin(angle);return p*c+cross(axis,p)*s+axis*dot(axis,p)*(1.0-c);}
@@ -165,6 +178,7 @@ export function createRockMaterial(
       vRockPosition=position;
       vRockNormal=normal;
       vRockCavity=aCavity;
+      ${options.visibleCount ? "vRockReveal=smoothstep(0.0,max(1.0,uRockFeather),uRockVisible-aRockIndex);" : ""}
       ${options.tumble ? "transformed=rockRotate(transformed,aRockAxis,uRockTime*aRockSpeed);" : ""}
     `,
     );
@@ -187,6 +201,7 @@ export function createRockMaterial(
       varying vec3 vRockNormal;
       varying vec3 vRockWorld;
       varying float vRockCavity;
+      ${options.visibleCount ? "varying float vRockReveal;" : ""}
       vec3 rockWeights(){vec3 w=pow(abs(normalize(vRockNormal)),vec3(5.0));return w/max(dot(w,vec3(1.0)),.0001);}
       vec3 rockMap(sampler2D tex){vec3 p=vRockPosition*.7;vec3 w=rockWeights();return texture2D(tex,p.yz).rgb*w.x+texture2D(tex,p.zx).rgb*w.y+texture2D(tex,p.xy).rgb*w.z;}
     `,
@@ -194,6 +209,7 @@ export function createRockMaterial(
     shader.fragmentShader = shader.fragmentShader.replace(
       "#include <color_fragment>",
       `#include <color_fragment>
+      ${options.visibleCount ? "diffuseColor.a*=vRockReveal;" : ""}
       diffuseColor.rgb*=rockMap(uRockAlbedo)*(.36+.64*vRockCavity)*2.8;
       ${options.ring ? "vec3 sun=normalize(vec3(1.0,.28,.55)); float along=dot(-vRockWorld,sun); float axisDistance=length(vRockWorld+sun*max(along,0.0)); diffuseColor.rgb*=mix(1.0,smoothstep(9.5,10.5,axisDistance),step(0.0,along));" : ""}
     `,
@@ -208,6 +224,6 @@ export function createRockMaterial(
     );
   };
   material.customProgramCacheKey = () =>
-    `rock-triplanar-${Boolean(options.ring)}-${Boolean(options.tumble)}`;
+    `rock-triplanar-${Boolean(options.ring)}-${Boolean(options.tumble)}-${Boolean(options.visibleCount)}`;
   return material;
 }

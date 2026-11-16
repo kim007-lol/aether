@@ -1,0 +1,1101 @@
+{
+  "generatedAt": "2026-11-16T08:14:50.068Z",
+  "iteration": "final",
+  "url": "http://127.0.0.1:4173",
+  "rendering": "Chromium ANGLE SwiftShader software; FPS is not real-GPU performance",
+  "fullSuite": true,
+  "samples": [
+    {
+      "progress": 0,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screenshot": "qa/screenshots/p0-1440x900.png",
+      "pixels": {
+        "mean": 19.251,
+        "standardDeviation": 51.947
+      },
+      "chapter": "Arrival",
+      "tier": "low",
+      "fps": 15.262897462210743,
+      "calls": 28,
+      "triangles": 147732,
+      "points": 30060,
+      "geometries": 39,
+      "textures": 41,
+      "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "halfFloat": true,
+      "minClearance": 2.106987346559868,
+      "gates": [
+        2.2554112024917434,
+        2.2072170997239824,
+        2.258002016255001,
+        2.275751050704388,
+        2.2710571401541526,
+        2.2845527884999535,
+        2.2105437815039304,
+        2.2409500766744817,
+        2.258503483235936,
+        2.2074896885029474,
+        2.2385089417747785,
+        2.2015996741045245
+      ],
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "right": 1440,
+          "bottom": 900,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 0.08,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screenshot": "qa/screenshots/p0.08-1440x900.png",
+      "pixels": {
+        "mean": 25.637,
+        "standardDeviation": 46.63
+      },
+      "chapter": "Arrival",
+      "tier": "low",
+      "fps": 3.6385367683026777,
+      "calls": 28,
+      "triangles": 147732,
+      "points": 30060,
+      "geometries": 39,
+      "textures": 41,
+      "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "halfFloat": true,
+      "minClearance": 2.106987346559868,
+      "gates": [
+        2.2554112024917434,
+        2.2072170997239824,
+        2.258002016255001,
+        2.275751050704388,
+        2.2710571401541526,
+        2.2845527884999535,
+        2.2105437815039304,
+        2.2409500766744817,
+        2.258503483235936,
+        2.2074896885029474,
+        2.2385089417747785,
+        2.2015996741045245
+      ],
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "right": 1440,
+          "bottom": 900,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 0.16,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screenshot": "qa/screenshots/p0.16-1440x900.png",
+      "pixels": {
+        "mean": 43.712,
+        "standardDeviation": 49.046
+      },
+      "chapter": "Atmosphere",
+      "tier": "low",
+      "fps": 10.207967318707281,
+      "calls": 28,
+      "triangles": 147732,
+      "points": 30060,
+      "geometries": 39,
+      "textures": 41,
+      "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "halfFloat": true,
+      "minClearance": 2.106987346559868,
+      "gates": [
+        2.2554112024917434,
+        2.2072170997239824,
+        2.258002016255001,
+        2.275751050704388,
+        2.2710571401541526,
+        2.2845527884999535,
+        2.2105437815039304,
+        2.2409500766744817,
+        2.258503483235936,
+        2.2074896885029474,
+        2.2385089417747785,
+        2.2015996741045245
+      ],
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "right": 1440,
+          "bottom": 900,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 0.25,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screenshot": "qa/screenshots/p0.25-1440x900.png",
+      "pixels": {
+        "mean": 50.64,
+        "standardDeviation": 60.185
+      },
+      "chapter": "Atmosphere",
+      "tier": "low",
+      "fps": 4.6452809657289995,
+      "calls": 28,
+      "triangles": 147732,
+      "points": 30060,
+      "geometries": 39,
+      "textures": 41,
+      "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "halfFloat": true,
+      "minClearance": 2.106987346559868,
+      "gates": [
+        2.2554112024917434,
+        2.2072170997239824,
+        2.258002016255001,
+        2.275751050704388,
+        2.2710571401541526,
+        2.2845527884999535,
+        2.2105437815039304,
+        2.2409500766744817,
+        2.258503483235936,
+        2.2074896885029474,
+        2.2385089417747785,
+        2.2015996741045245
+      ],
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "right": 1440,
+          "bottom": 900,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 0.34,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screenshot": "qa/screenshots/p0.34-1440x900.png",
+      "pixels": {
+        "mean": 13.776,
+        "standardDeviation": 30.894
+      },
+      "chapter": "Rings",
+      "tier": "low",
+      "fps": 3.5341594791872275,
+      "calls": 30,
+      "triangles": 753540,
+      "points": 90060,
+      "geometries": 39,
+      "textures": 41,
+      "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "halfFloat": true,
+      "minClearance": 2.106987346559868,
+      "gates": [
+        2.2554112024917434,
+        2.2072170997239824,
+        2.258002016255001,
+        2.275751050704388,
+        2.2710571401541526,
+        2.2845527884999535,
+        2.2105437815039304,
+        2.2409500766744817,
+        2.258503483235936,
+        2.2074896885029474,
+        2.2385089417747785,
+        2.2015996741045245
+      ],
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "right": 1440,
+          "bottom": 900,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 0.43,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screenshot": "qa/screenshots/p0.43-1440x900.png",
+      "pixels": {
+        "mean": 13.546,
+        "standardDeviation": 33.735
+      },
+      "chapter": "Rings",
+      "tier": "low",
+      "fps": 1.6407542913338176,
+      "calls": 30,
+      "triangles": 753540,
+      "points": 90060,
+      "geometries": 39,
+      "textures": 41,
+      "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "halfFloat": true,
+      "minClearance": 2.106987346559868,
+      "gates": [
+        2.2554112024917434,
+        2.2072170997239824,
+        2.258002016255001,
+        2.275751050704388,
+        2.2710571401541526,
+        2.2845527884999535,
+        2.2105437815039304,
+        2.2409500766744817,
+        2.258503483235936,
+        2.2074896885029474,
+        2.2385089417747785,
+        2.2015996741045245
+      ],
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "right": 1440,
+          "bottom": 900,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 0.52,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screenshot": "qa/screenshots/p0.52-1440x900.png",
+      "pixels": {
+        "mean": 14.27,
+        "standardDeviation": 30.699
+      },
+      "chapter": "Debris",
+      "tier": "low",
+      "fps": 1.6796477153299492,
+      "calls": 49,
+      "triangles": 1015200,
+      "points": 94060,
+      "geometries": 42,
+      "textures": 41,
+      "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "halfFloat": true,
+      "minClearance": 2.106987346559868,
+      "gates": [
+        2.2554112024917434,
+        2.2072170997239824,
+        2.258002016255001,
+        2.275751050704388,
+        2.2710571401541526,
+        2.2845527884999535,
+        2.2105437815039304,
+        2.2409500766744817,
+        2.258503483235936,
+        2.2074896885029474,
+        2.2385089417747785,
+        2.2015996741045245
+      ],
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "right": 1440,
+          "bottom": 900,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 0.64,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screenshot": "qa/screenshots/p0.64-1440x900.png",
+      "pixels": {
+        "mean": 9.901,
+        "standardDeviation": 32.989
+      },
+      "chapter": "Debris",
+      "tier": "low",
+      "fps": 0.9248949112550559,
+      "calls": 40,
+      "triangles": 1196774,
+      "points": 42063,
+      "geometries": 42,
+      "textures": 41,
+      "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "halfFloat": true,
+      "minClearance": 2.106987346559868,
+      "gates": [
+        2.2554112024917434,
+        2.2072170997239824,
+        2.258002016255001,
+        2.275751050704388,
+        2.2710571401541526,
+        2.2845527884999535,
+        2.2105437815039304,
+        2.2409500766744817,
+        2.258503483235936,
+        2.2074896885029474,
+        2.2385089417747785,
+        2.2015996741045245
+      ],
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "right": 1440,
+          "bottom": 900,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 0.78,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screenshot": "qa/screenshots/p0.78-1440x900.png",
+      "pixels": {
+        "mean": 38.643,
+        "standardDeviation": 32.813
+      },
+      "chapter": "Nebula",
+      "tier": "low",
+      "fps": 2.3207535278596816,
+      "calls": 29,
+      "triangles": 1494,
+      "points": 38063,
+      "geometries": 42,
+      "textures": 41,
+      "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "halfFloat": true,
+      "minClearance": 2.106987346559868,
+      "gates": [
+        2.2554112024917434,
+        2.2072170997239824,
+        2.258002016255001,
+        2.275751050704388,
+        2.2710571401541526,
+        2.2845527884999535,
+        2.2105437815039304,
+        2.2409500766744817,
+        2.258503483235936,
+        2.2074896885029474,
+        2.2385089417747785,
+        2.2015996741045245
+      ],
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "right": 1440,
+          "bottom": 900,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 0.9,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screenshot": "qa/screenshots/p0.9-1440x900.png",
+      "pixels": {
+        "mean": 86.992,
+        "standardDeviation": 33.204
+      },
+      "chapter": "Core",
+      "tier": "low",
+      "fps": 1.3009229164764913,
+      "calls": 41,
+      "triangles": 329075,
+      "points": 38063,
+      "geometries": 42,
+      "textures": 41,
+      "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "halfFloat": true,
+      "minClearance": 2.106987346559868,
+      "gates": [
+        2.2554112024917434,
+        2.2072170997239824,
+        2.258002016255001,
+        2.275751050704388,
+        2.2710571401541526,
+        2.2845527884999535,
+        2.2105437815039304,
+        2.2409500766744817,
+        2.258503483235936,
+        2.2074896885029474,
+        2.2385089417747785,
+        2.2015996741045245
+      ],
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "right": 1440,
+          "bottom": 900,
+          "left": 0
+        }
+      }
+    },
+    {
+      "progress": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screenshot": "qa/screenshots/p1-1440x900.png",
+      "pixels": {
+        "mean": 24.431,
+        "standardDeviation": 35.865
+      },
+      "chapter": "Core",
+      "tier": "low",
+      "fps": 1.039991308517195,
+      "calls": 41,
+      "triangles": 329075,
+      "points": 38063,
+      "geometries": 42,
+      "textures": 41,
+      "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "halfFloat": true,
+      "minClearance": 2.106987346559868,
+      "gates": [
+        2.2554112024917434,
+        2.2072170997239824,
+        2.258002016255001,
+        2.275751050704388,
+        2.2710571401541526,
+        2.2845527884999535,
+        2.2105437815039304,
+        2.2409500766744817,
+        2.258503483235936,
+        2.2074896885029474,
+        2.2385089417747785,
+        2.2015996741045245
+      ],
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1430,
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "right": 1440,
+          "bottom": 900,
+          "left": 0
+        }
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "loader counter and duration",
+      "page": "1440x900",
+      "status": "PASS",
+      "evidence": {
+        "loader": {
+          "counts": [
+            "000",
+            "008",
+            "009",
+            "011",
+            "012",
+            "014",
+            "015",
+            "016",
+            "017",
+            "018",
+            "019",
+            "020",
+            "021",
+            "022",
+            "023",
+            "024",
+            "031",
+            "032",
+            "033",
+            "034",
+            "035",
+            "036",
+            "037",
+            "038",
+            "039",
+            "040",
+            "046",
+            "050",
+            "061",
+            "070",
+            "078",
+            "086",
+            "094",
+            "100"
+          ],
+          "status": "Calibrating orbit",
+          "wordmark": "AETHER",
+          "removedAt": 9270,
+          "loadedAt": 7385.5999999940395
+        },
+        "longTasks": [
+          {
+            "start": 78.69999998807907,
+            "duration": 546
+          },
+          {
+            "start": 632,
+            "duration": 673
+          },
+          {
+            "start": 1948.2999999970198,
+            "duration": 197
+          },
+          {
+            "start": 4606.5999999940395,
+            "duration": 174
+          },
+          {
+            "start": 4785.5999999940395,
+            "duration": 64
+          },
+          {
+            "start": 4854.899999991059,
+            "duration": 178
+          },
+          {
+            "start": 5037.699999988079,
+            "duration": 315
+          },
+          {
+            "start": 5358.0999999940395,
+            "duration": 239
+          },
+          {
+            "start": 5602.29999999702,
+            "duration": 232
+          },
+          {
+            "start": 5840.29999999702,
+            "duration": 419
+          },
+          {
+            "start": 6265.0999999940395,
+            "duration": 307
+          },
+          {
+            "start": 6572.0999999940395,
+            "duration": 811
+          }
+        ],
+        "cls": 0.0025436907061469997
+      }
+    },
+    {
+      "name": "sample progress 0",
+      "page": "1440x900",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0-1440x900.png",
+        "pixels": {
+          "mean": 19.251,
+          "standardDeviation": 51.947
+        },
+        "calls": 28,
+        "triangles": 147732
+      }
+    },
+    {
+      "name": "sample progress 0.08",
+      "page": "1440x900",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0.08-1440x900.png",
+        "pixels": {
+          "mean": 25.637,
+          "standardDeviation": 46.63
+        },
+        "calls": 28,
+        "triangles": 147732
+      }
+    },
+    {
+      "name": "sample progress 0.16",
+      "page": "1440x900",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0.16-1440x900.png",
+        "pixels": {
+          "mean": 43.712,
+          "standardDeviation": 49.046
+        },
+        "calls": 28,
+        "triangles": 147732
+      }
+    },
+    {
+      "name": "sample progress 0.25",
+      "page": "1440x900",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0.25-1440x900.png",
+        "pixels": {
+          "mean": 50.64,
+          "standardDeviation": 60.185
+        },
+        "calls": 28,
+        "triangles": 147732
+      }
+    },
+    {
+      "name": "sample progress 0.34",
+      "page": "1440x900",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0.34-1440x900.png",
+        "pixels": {
+          "mean": 13.776,
+          "standardDeviation": 30.894
+        },
+        "calls": 30,
+        "triangles": 753540
+      }
+    },
+    {
+      "name": "sample progress 0.43",
+      "page": "1440x900",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0.43-1440x900.png",
+        "pixels": {
+          "mean": 13.546,
+          "standardDeviation": 33.735
+        },
+        "calls": 30,
+        "triangles": 753540
+      }
+    },
+    {
+      "name": "sample progress 0.52",
+      "page": "1440x900",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0.52-1440x900.png",
+        "pixels": {
+          "mean": 14.27,
+          "standardDeviation": 30.699
+        },
+        "calls": 49,
+        "triangles": 1015200
+      }
+    },
+    {
+      "name": "sample progress 0.64",
+      "page": "1440x900",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0.64-1440x900.png",
+        "pixels": {
+          "mean": 9.901,
+          "standardDeviation": 32.989
+        },
+        "calls": 40,
+        "triangles": 1196774
+      }
+    },
+    {
+      "name": "sample progress 0.78",
+      "page": "1440x900",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0.78-1440x900.png",
+        "pixels": {
+          "mean": 38.643,
+          "standardDeviation": 32.813
+        },
+        "calls": 29,
+        "triangles": 1494
+      }
+    },
+    {
+      "name": "sample progress 0.9",
+      "page": "1440x900",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p0.9-1440x900.png",
+        "pixels": {
+          "mean": 86.992,
+          "standardDeviation": 33.204
+        },
+        "calls": 41,
+        "triangles": 329075
+      }
+    },
+    {
+      "name": "sample progress 1",
+      "page": "1440x900",
+      "status": "PASS",
+      "evidence": {
+        "screenshot": "qa/screenshots/p1-1440x900.png",
+        "pixels": {
+          "mean": 24.431,
+          "standardDeviation": 35.865
+        },
+        "calls": 41,
+        "triangles": 329075
+      }
+    },
+    {
+      "name": "solid mesh path clearance and near-miss gates",
+      "page": "1440x900",
+      "status": "PASS",
+      "evidence": {
+        "minimum": 2.106987346559868,
+        "gates": [
+          2.2554112024917434,
+          2.2072170997239824,
+          2.258002016255001,
+          2.275751050704388,
+          2.2710571401541526,
+          2.2845527884999535,
+          2.2105437815039304,
+          2.2409500766744817,
+          2.258503483235936,
+          2.2074896885029474,
+          2.2385089417747785,
+          2.2015996741045245
+        ]
+      }
+    },
+    {
+      "name": "keyboard navigation all seven keys",
+      "page": "desktop",
+      "status": "PASS",
+      "evidence": [
+        {
+          "key": "ArrowDown",
+          "expected": 0.25,
+          "actual": 0.25
+        },
+        {
+          "key": "PageDown",
+          "expected": 0.43,
+          "actual": 0.43
+        },
+        {
+          "key": "Space",
+          "expected": 0.64,
+          "actual": 0.64
+        },
+        {
+          "key": "ArrowUp",
+          "expected": 0.43,
+          "actual": 0.43
+        },
+        {
+          "key": "PageUp",
+          "expected": 0.25,
+          "actual": 0.251440929983107
+        },
+        {
+          "key": "End",
+          "expected": 1,
+          "actual": 0.9937845389102867
+        },
+        {
+          "key": "Home",
+          "expected": 0,
+          "actual": 0.00908885824152018
+        }
+      ]
+    },
+    {
+      "name": "semantic labels, skip link, target sizes and focus",
+      "page": "desktop",
+      "status": "PASS",
+      "evidence": {
+        "header": true,
+        "sections": 6,
+        "labelled": true,
+        "nav": true,
+        "firstFocusable": "Skip to content",
+        "live": true,
+        "canvasHidden": "true",
+        "buttons": [
+          {
+            "name": "Aether — return to arrival",
+            "width": 107.765625,
+            "height": 44
+          },
+          {
+            "name": "Enable ambient sound",
+            "width": 111.765625,
+            "height": 44
+          },
+          {
+            "name": "Quality: Low. Change quality",
+            "width": 103.40625,
+            "height": 44
+          },
+          {
+            "name": "Go to 01 — Arrival",
+            "width": 72.40625,
+            "height": 44
+          },
+          {
+            "name": "Go to 02 — Atmosphere",
+            "width": 94,
+            "height": 44
+          },
+          {
+            "name": "Go to 03 — Rings",
+            "width": 58,
+            "height": 44
+          },
+          {
+            "name": "Go to 04 — Debris",
+            "width": 65.203125,
+            "height": 44
+          },
+          {
+            "name": "Go to 05 — Nebula",
+            "width": 65.203125,
+            "height": 44
+          },
+          {
+            "name": "Go to 06 — Core",
+            "width": 50.8125,
+            "height": 44
+          },
+          {
+            "name": "Begin again",
+            "width": 182.140625,
+            "height": 52
+          },
+          {
+            "name": "Replay the descent",
+            "width": 123.21875,
+            "height": 44
+          }
+        ],
+        "outline": {
+          "width": "2px",
+          "style": "solid"
+        }
+      }
+    },
+    {
+      "name": "pointer parallax and desktop cursor",
+      "page": "desktop",
+      "status": "PASS",
+      "evidence": {
+        "state": {
+          "reduced": false,
+          "cameraParallaxEnabled": true,
+          "cameraPosition": [
+            -2.9237117005827193,
+            6.355968054933358,
+            45.55917678512699
+          ],
+          "cameraRotation": [
+            -0.05896281819360683,
+            -0.05815314890921993,
+            0.01269677237746681,
+            "XYZ"
+          ],
+          "pointer": [
+            0.4080368747190709,
+            0.28140474118556613
+          ],
+          "target": 0,
+          "audio": false,
+          "audioPreferred": false,
+          "shockwaves": 0,
+          "automatic": false,
+          "steps": 0
+        },
+        "cursor": true,
+        "opacity": "1"
+      }
+    },
+    {
+      "name": "sound off by default, toggle and persistence without autoplay",
+      "page": "desktop",
+      "status": "PASS",
+      "evidence": {
+        "reduced": false,
+        "cameraParallaxEnabled": true,
+        "cameraPosition": [
+          0.19481709810049727,
+          6.8349463139655615,
+          52.00152757218171
+        ],
+        "cameraRotation": [
+          -0.0477022606860938,
+          -0.012919838295480478,
+          0.0007494813787553478,
+          "XYZ"
+        ],
+        "pointer": [
+          0.587978379660663,
+          -0.35627321756039393
+        ],
+        "target": 0,
+        "audio": false,
+        "audioPreferred": true,
+        "shockwaves": 0,
+        "automatic": false,
+        "steps": 0
+      }
+    },
+    {
+      "name": "Core shockwave on click",
+      "page": "desktop",
+      "status": "PASS",
+      "evidence": {
+        "before": 0,
+        "after": 1
+      }
+    },
+    {
+      "name": "Begin again and Replay the descent",
+      "page": "desktop",
+      "status": "PASS",
+      "evidence": {
+        "early": 0.14225000000000002,
+        "end": 0.9987249999999998,
+        "durationSeconds": 40
+      }
+    },
+    {
+      "name": "memory remains stable after five full scroll loops",
+      "page": "desktop",
+      "status": "FAIL",
+      "error": "page.evaluate: Target page, context or browser has been closed\n    at setProgress (C:\\Users\\zoan\\Documents\\development\\test\\3d web astra\\aether\\qa\\qa.mjs:183:14)\n    at async file:///C:/Users/zoan/Documents/development/test/3d%20web%20astra/aether/qa/qa.mjs:426:11\n    at async check (C:\\Users\\zoan\\Documents\\development\\test\\3d web astra\\aether\\qa\\qa.mjs:71:22)\n    at async desktopFeatures (C:\\Users\\zoan\\Documents\\development\\test\\3d web astra\\aether\\qa\\qa.mjs:419:3)\n    at async file:///C:/Users/zoan/Documents/development/test/3d%20web%20astra/aether/qa/qa.mjs:557:27"
+    },
+    {
+      "name": "automatic quality steps down once under slow frames",
+      "page": "desktop",
+      "status": "FAIL",
+      "error": "page.evaluate: Target page, context or browser has been closed\n    at C:\\Users\\zoan\\Documents\\development\\test\\3d web astra\\aether\\qa\\qa.mjs:453:18\n    at check (C:\\Users\\zoan\\Documents\\development\\test\\3d web astra\\aether\\qa\\qa.mjs:71:28)\n    at desktopFeatures (C:\\Users\\zoan\\Documents\\development\\test\\3d web astra\\aether\\qa\\qa.mjs:450:9)\n    at async file:///C:/Users/zoan/Documents/development/test/3d%20web%20astra/aether/qa/qa.mjs:557:27"
+    },
+    {
+      "name": "context loss overlay and restoration reload",
+      "page": "desktop",
+      "status": "FAIL",
+      "error": "page.evaluate: Target page, context or browser has been closed\n    at C:\\Users\\zoan\\Documents\\development\\test\\3d web astra\\aether\\qa\\qa.mjs:478:31\n    at check (C:\\Users\\zoan\\Documents\\development\\test\\3d web astra\\aether\\qa\\qa.mjs:71:28)\n    at desktopFeatures (C:\\Users\\zoan\\Documents\\development\\test\\3d web astra\\aether\\qa\\qa.mjs:477:9)\n    at async file:///C:/Users/zoan/Documents/development/test/3d%20web%20astra/aether/qa/qa.mjs:557:27"
+    }
+  ],
+  "console": [],
+  "externalRequests": [],
+  "pageErrors": [],
+  "navigation": [
+    {
+      "page": "1440x900",
+      "milliseconds": 9283
+    },
+    {
+      "page": "audio-reload",
+      "milliseconds": 82372
+    }
+  ],
+  "memoryLoops": [
+    {
+      "loop": 1,
+      "geometries": 43,
+      "textures": 41
+    }
+  ],
+  "softwareFps": {
+    "min": 0.9248949112550559,
+    "max": 15.262897462210743,
+    "mean": 4.199618787719012
+  },
+  "fatal": "page.evaluate: Target page, context or browser has been closed\n    at C:\\Users\\zoan\\Documents\\development\\test\\3d web astra\\aether\\qa\\qa.mjs:645:32",
+  "passed": false,
+  "summary": {
+    "samples": 11,
+    "checksPassed": 19,
+    "checksFailed": 3,
+    "consoleIssues": 0,
+    "pageErrors": 0,
+    "externalRequests": 0
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "date": "2026-11-16",
+  "summary": {
+    "PASS": 34,
+    "FAIL": 2,
+    "NOT-RUN": 0
+  },
+  "criteria": [
+    {
+      "id": "AC-001",
+      "status": "PASS",
+      "evidence": "npm ci installed 131 packages; package.json uses exact versions."
+    },
+    {
+      "id": "AC-002",
+      "status": "PASS",
+      "evidence": "npm ls three shows one deduplicated three@0.187.0."
+    },
+    {
+      "id": "AC-003",
+      "status": "PASS",
+      "evidence": "npm run typecheck: 0 errors."
+    },
+    {
+      "id": "AC-004",
+      "status": "PASS",
+      "evidence": "npm run lint: 0 errors and 0 warnings."
+    },
+    {
+      "id": "AC-005",
+      "status": "PASS",
+      "evidence": "npm run build succeeds; total JS gzip is 327,998 bytes."
+    },
+    {
+      "id": "AC-006",
+      "status": "PASS",
+      "evidence": "Preview full scroll and return: 0 console errors or warnings in report.json."
+    },
+    {
+      "id": "AC-007",
+      "status": "PASS",
+      "evidence": "Request listener recorded 0 external requests in report.json."
+    },
+    {
+      "id": "AC-010",
+      "status": "PASS",
+      "evidence": "Observed 000 and 100, wordmark and status; loader duration exceeds 2.2 s."
+    },
+    {
+      "id": "AC-011",
+      "status": "PASS",
+      "evidence": "Inspected p0 and p0.08 desktop images: terrain, glint, clouds and lit limb."
+    },
+    {
+      "id": "AC-012",
+      "status": "FAIL",
+      "evidence": "Night city points are visible; sunset band is weak and cloud shadows approximate."
+    },
+    {
+      "id": "AC-013",
+      "status": "PASS",
+      "evidence": "Inspected p0.34/p0.43/p0.52 and high-rings.png; gaps, lit particles and shadow."
+    },
+    {
+      "id": "AC-014",
+      "status": "PASS",
+      "evidence": "Inspected p0.64; 12 gates; conservative clearance is 1.6519 units after motion reserve."
+    },
+    {
+      "id": "AC-015",
+      "status": "PASS",
+      "evidence": "Inspected p0.78: three-color volume, embedded glows and sparks."
+    },
+    {
+      "id": "AC-016",
+      "status": "PASS",
+      "evidence": "Inspected p1 and core-click.png; click and tap each trigger one shockwave."
+    },
+    {
+      "id": "AC-017",
+      "status": "PASS",
+      "evidence": "continuity-report.json: 201 samples, 41 reviewed frames, 0 browser issues."
+    },
+    {
+      "id": "AC-020",
+      "status": "PASS",
+      "evidence": "npm run qa:geometry passes all minimums in geometry-report.json."
+    },
+    {
+      "id": "AC-021",
+      "status": "PASS",
+      "evidence": "Final desktop/mobile sheets and high-rings.png show smooth organic geometry."
+    },
+    {
+      "id": "AC-030",
+      "status": "PASS",
+      "evidence": "report.json verifies all seven keyboard navigation keys."
+    },
+    {
+      "id": "AC-031",
+      "status": "PASS",
+      "evidence": "Pointer test passes; CameraRig uses reviewed exponential dt damping."
+    },
+    {
+      "id": "AC-032",
+      "status": "PASS",
+      "evidence": "Desktop cursor test passes; touch cursor display is none."
+    },
+    {
+      "id": "AC-033",
+      "status": "PASS",
+      "evidence": "Reduced motion test confirms parallax disabled and shockwave count remains zero."
+    },
+    {
+      "id": "AC-034",
+      "status": "PASS",
+      "evidence": "Audio starts off; toggle and preference persistence pass without autoplay."
+    },
+    {
+      "id": "AC-035",
+      "status": "PASS",
+      "evidence": "Begin again and actual 40-second Replay pass."
+    },
+    {
+      "id": "AC-040",
+      "status": "PASS",
+      "evidence": "11 samples per tier: medium max 49 calls/2,594,774 triangles; high 46/4,418,811."
+    },
+    {
+      "id": "AC-041",
+      "status": "PASS",
+      "evidence": "Update paths reviewed: vectors, matrices, colors and arrays are preallocated."
+    },
+    {
+      "id": "AC-042",
+      "status": "PASS",
+      "evidence": "Forced slow frames produce exactly one medium-to-low step without reload."
+    },
+    {
+      "id": "AC-043",
+      "status": "PASS",
+      "evidence": "Five complete loops retain 43 geometries and 41 textures."
+    },
+    {
+      "id": "AC-050",
+      "status": "PASS",
+      "evidence": "Six labelled sections, skip link, nav, live region, 44px targets and focus ring pass."
+    },
+    {
+      "id": "AC-051",
+      "status": "FAIL",
+      "evidence": "contrast-report.json: 27 of 42 conservative text rectangles fall below 4.5:1."
+    },
+    {
+      "id": "AC-060",
+      "status": "PASS",
+      "evidence": "Forced fallback and unavailable WebGL2 tests pass; fallback.png inspected."
+    },
+    {
+      "id": "AC-061",
+      "status": "PASS",
+      "evidence": "Actual context loss shows overlay; restoration reloads successfully."
+    },
+    {
+      "id": "AC-062",
+      "status": "PASS",
+      "evidence": "Rotation to 844×390 preserves canvas aspect without overflow."
+    },
+    {
+      "id": "AC-063",
+      "status": "PASS",
+      "evidence": "All eleven 390×844 captures inspected; touch, CTA and layout checks pass."
+    },
+    {
+      "id": "AC-070",
+      "status": "PASS",
+      "evidence": "README covers commands, controls, quality tiers, debug flags and architecture."
+    },
+    {
+      "id": "AC-071",
+      "status": "PASS",
+      "evidence": "PLAN, ASSUMPTIONS and DEVIATIONS exist and describe actual implementation."
+    },
+    {
+      "id": "AC-072",
+      "status": "PASS",
+      "evidence": "Forbidden-term source scan returned zero matches."
+    }
+  ]
+}

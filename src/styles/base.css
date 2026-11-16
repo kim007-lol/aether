@@ -80,7 +80,7 @@ a {
   inset: -100px -70px;
   z-index: -1;
   background: radial-gradient(
-    ellipse,
+    ellipse closest-side,
     rgba(5, 6, 10, 0.55) 48%,
     rgba(5, 6, 10, 0.35) 72%,
     rgba(5, 6, 10, 0) 100%
@@ -340,7 +340,7 @@ a {
   .chapter-copy::before {
     inset: -48px -36px -60px;
     background: radial-gradient(
-      ellipse,
+      ellipse closest-side,
       rgba(5, 6, 10, 0.55) 55%,
       rgba(5, 6, 10, 0.4) 80%,
       rgba(5, 6, 10, 0) 100%

@@ -18,12 +18,10 @@ export function showFallback(): void {
   const cancelReplay = () => gsap.killTweensOf(replay);
   const scrollToChapter = (index: number) => {
     cancelReplay();
-    document
-      .getElementById(chapters[index].id)
-      ?.scrollIntoView({
-        behavior: reduced ? "instant" : "smooth",
-        block: "start",
-      });
+    document.getElementById(chapters[index].id)?.scrollIntoView({
+      behavior: reduced ? "instant" : "smooth",
+      block: "start",
+    });
   };
   document
     .querySelectorAll<HTMLButtonElement>("[data-chapter]")

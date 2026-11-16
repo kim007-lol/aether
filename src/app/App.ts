@@ -1,24 +1,313 @@
-import {Core} from '../chapters/Core';
-import {Nebula} from '../chapters/Nebula';
-import {Asteroids} from '../chapters/Asteroids';
-import {Rings} from '../chapters/Rings';
-import {Planet} from '../chapters/Planet';
-import {Starfield} from '../chapters/Starfield';import {buildEnvironment} from '../core/EnvBuilder';
-import {Scene,DirectionalLight,HemisphereLight,Vector2,type WebGLRenderer} from 'three';
-import {gsap} from 'gsap';import {createRenderer,resizeRenderer,gpuName} from '../core/Renderer';import {Composer} from '../core/Composer';import {CameraRig} from '../core/CameraRig';import {ScrollDirector} from '../core/ScrollDirector';import {TaskQueue} from '../core/TaskQueue';import {Quality} from './Quality';import {Loop} from './Loop';import {Events} from './Events';import {Loader} from '../ui/Loader';import {Hud} from '../ui/Hud';import {Cursor} from '../ui/Cursor';import {AudioEngine} from '../ui/AudioEngine';import {chapterAt,chapters} from '../config/chapters';import {SUN} from '../config/cameraPath';import type {TierName} from '../config/quality';import type {Chapter,Ctx,FrameState} from '../chapters/Chapter';import {installDebugApi} from '../qa/debugApi';
+import { Core } from "../chapters/Core";
+import { Nebula } from "../chapters/Nebula";
+import { Asteroids } from "../chapters/Asteroids";
+import { Rings } from "../chapters/Rings";
+import { Planet } from "../chapters/Planet";
+import { Starfield } from "../chapters/Starfield";
+import { buildEnvironment } from "../core/EnvBuilder";
+import {
+  Scene,
+  DirectionalLight,
+  HemisphereLight,
+  Vector2,
+  type WebGLRenderer,
+} from "three";
+import { gsap } from "gsap";
+import { createRenderer, resizeRenderer, gpuName } from "../core/Renderer";
+import { Composer } from "../core/Composer";
+import { CameraRig } from "../core/CameraRig";
+import { ScrollDirector } from "../core/ScrollDirector";
+import { TaskQueue } from "../core/TaskQueue";
+import { Quality } from "./Quality";
+import { Loop } from "./Loop";
+import { Events } from "./Events";
+import { Loader } from "../ui/Loader";
+import { Hud } from "../ui/Hud";
+import { Cursor } from "../ui/Cursor";
+import { AudioEngine } from "../ui/AudioEngine";
+import { chapterAt, chapters } from "../config/chapters";
+import { SUN, CAMERA_MOTION_RESERVE } from "../config/cameraPath";
+import type { TierName } from "../config/quality";
+import type { Chapter, Ctx, FrameState } from "../chapters/Chapter";
+import { installDebugApi } from "../qa/debugApi";
 export class App {
- readonly reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;readonly scene=new Scene();readonly rig=new CameraRig(this.reduced);readonly scroll=new ScrollDirector(this.reduced);readonly renderer:WebGLRenderer;readonly quality:Quality;readonly composer:Composer;readonly loader=new Loader();readonly audio=new AudioEngine();readonly hud:Hud;readonly cursor=new Cursor(this.reduced);readonly ready:Promise<void>;readonly gpu:string;readonly chapters:Chapter[]=[];readonly ctx:Ctx;readonly sun:DirectionalLight;
- private resolveReady!:()=>void;private readonly loop:Loop;private readonly events:Events;private loaded=false;private fps=60;private chapter=-1;private state:FrameState;private pulse=0;private ended=false;shockwaves=0;
- constructor(){this.ready=new Promise(resolve=>{this.resolveReady=resolve;});const canvas=document.createElement('canvas');canvas.setAttribute('aria-hidden','true');document.querySelector('#webgl')!.appendChild(canvas);this.renderer=createRenderer(canvas);this.gpu=gpuName(this.renderer);this.quality=new Quality(this.gpu);resizeRenderer(this.renderer,this.quality.tier);this.composer=new Composer(this.renderer,this.scene,this.rig.camera,this.quality.tier);this.sun=new DirectionalLight('#fff1dc',3.2);this.sun.position.copy(SUN).multiplyScalar(200);this.sun.shadow.bias=-.0004;this.sun.shadow.normalBias=.02;Object.assign(this.sun.shadow.camera,{left:-14,right:14,top:14,bottom:-14,near:1,far:200});this.scene.add(this.sun.target);this.scene.add(this.sun,new HemisphereLight('#0b1030','#05060a',.15));this.ctx={scene:this.scene,camera:this.rig.camera,renderer:this.renderer,tier:this.quality.tier};this.state={time:0,dt:0,progress:0,chapterT:0,velocity:0,pointer:new Vector2(),camera:this.rig.camera,tier:this.quality.tier,reduced:this.reduced};this.hud=new Hud({jumpTo:p=>this.scroll.jumpTo(p),setQuality:t=>this.setTier(t),toggleAudio:()=>{void this.audio.toggle().then(on=>this.hud.setSound(on));},replay:()=>this.scroll.replay()},this.reduced);this.hud.setQuality(this.quality.automatic?'auto':this.quality.tier.name);this.events=new Events(canvas,this.rig,()=>this.resize(),()=>this.shockwave());this.loop=new Loop((t,dt,ms)=>this.frame(t,dt,ms));installDebugApi(this);void this.boot();}
- private async boot(){const queue=new TaskQueue(12,p=>this.loader.setProgress(p));await this.createChapters(queue);for(const chapter of this.chapters){await queue.task(async()=>{for(const other of this.chapters)other.setVisible(other===chapter);this.rig.update((chapter.range[0]+chapter.range[1])*.5,0,.016);if(this.renderer.extensions.has('KHR_parallel_shader_compile'))await this.renderer.compileAsync(this.scene,this.rig.camera);else this.renderer.compile(this.scene,this.rig.camera);chapter.warm(this.renderer);});}this.rig.intro=1;this.rig.update(0,0,.016);this.loaded=true;this.loader.setProgress(1);gsap.to(this.rig,{intro:0,duration:1.8,ease:'power3.inOut'});await this.loader.finish();this.resolveReady();if(new URLSearchParams(location.search).has('debug')){const {default:GUI}=await import('lil-gui');const gui=new GUI({title:'AETHER'});const controls={progress:0,tier:this.quality.tier.name};gui.add(controls,'progress',0,1,.001).onChange((v:number)=>this.setProgress(v));gui.add(controls,'tier',['low','medium','high','ultra']).onChange((v:TierName)=>this.setTier(v));}}
- private async createChapters(queue:TaskQueue){this.ctx.env=await queue.task(()=>buildEnvironment(this.renderer).texture);const stars=new Starfield();await queue.task(()=>stars.init(this.ctx,queue));this.chapters.push(stars);const planet=new Planet();await queue.task(()=>planet.init(this.ctx,queue));this.chapters.push(planet);const rings=new Rings();await queue.task(()=>rings.init(this.ctx,queue));this.chapters.push(rings);const asteroids=new Asteroids();await queue.task(()=>asteroids.init(this.ctx,queue));this.chapters.push(asteroids);const nebula=new Nebula();await queue.task(()=>nebula.init(this.ctx,queue));this.chapters.push(nebula);const core=new Core();await queue.task(()=>core.init(this.ctx,queue));this.chapters.push(core);}
- private frame(time:number,dt:number,rawMs:number){if(this.ended)return;this.loader.update();if(!this.loaded)return;this.scroll.update(dt);const p=this.scroll.progress;this.rig.update(p,time,dt);this.renderer.info.reset();this.state.time=time;this.state.dt=dt;this.state.progress=p;this.state.velocity=this.scroll.velocity;this.state.pointer.copy(this.rig.pointer);this.state.tier=this.quality.tier;for(const chapter of this.chapters){const active=p>=chapter.range[0]-.06&&p<=chapter.range[1]+.06;chapter.setVisible(active);if(active){this.state.chapterT=Math.max(0,Math.min(1,(p-chapter.range[0])/(chapter.range[1]-chapter.range[0])));chapter.update(this.state);}}
- this.hud.update(this.scroll.target);this.cursor.update(dt,p>.86,p>.86?1:0);const index=chapterAt(p);if(index!==this.chapter){this.chapter=index;this.audio.swell(index);}this.pulse*=Math.exp(-dt*5);this.composer.update(this.scroll.velocity,this.pulse,this.reduced);this.sun.castShadow=this.quality.tier.shadowSize>0;this.renderer.shadowMap.enabled=this.sun.castShadow;this.sun.position.copy(this.rig.camera.position).addScaledVector(SUN,80);this.sun.target.position.copy(this.rig.camera.position);this.composer.composer.render(dt);this.fps+=(1000/Math.max(rawMs,1)-this.fps)*.05;const next=this.quality.sample(rawMs);if(next)this.applyTier();}
- setProgress(p:number){this.scroll.setProgress(p);this.rig.update(p,performance.now()/1000,.016);this.hud.update(p);}
- setTier(tier:TierName|'auto'){this.quality.set(tier);this.applyTier();}
- private applyTier(){this.ctx.tier=this.quality.tier;for(const chapter of this.chapters)chapter.rebuild(this.quality.tier);resizeRenderer(this.renderer,this.quality.tier);this.composer.rebuild(this.quality.tier);this.resize();this.hud.setQuality(this.quality.automatic?'auto':this.quality.tier.name);}
- resize(){this.rig.resize();resizeRenderer(this.renderer,this.quality.tier);this.composer.resize();}
- shockwave(){if(this.scroll.progress<.86||this.reduced)return;this.pulse=1;this.rig.shake=1;this.shockwaves++;(this.chapters.find(c=>c.id==='core') as Core|undefined)?.shock();}
- getInfo(){const info=this.renderer.info;return{progress:this.scroll.progress,chapter:chapters[chapterAt(this.scroll.progress)].name,tier:this.quality.tier.name,fps:this.fps,calls:info.render.calls,triangles:info.render.triangles,points:info.render.points,geometries:info.memory.geometries,textures:info.memory.textures,gpu:this.gpu,halfFloat:this.composer.halfFloat,minClearance:Math.min(...this.chapters.map(c=>(c as Chapter&{minClearance?:number}).minClearance??Infinity)),gates:(this.chapters.find(c=>c.id==='asteroids') as Asteroids|undefined)?.gateClearances};}
- dispose(){if(this.ended)return;this.ended=true;this.loop.dispose();this.events.dispose();this.scroll.destroy();this.hud.destroy();this.cursor.destroy();this.audio.dispose();for(const chapter of this.chapters)chapter.dispose();this.composer.dispose();this.renderer.dispose();}
+  readonly reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  readonly scene = new Scene();
+  readonly rig = new CameraRig(this.reduced);
+  readonly scroll = new ScrollDirector(this.reduced);
+  readonly renderer: WebGLRenderer;
+  readonly quality: Quality;
+  readonly composer: Composer;
+  readonly loader = new Loader();
+  readonly audio = new AudioEngine();
+  readonly hud: Hud;
+  readonly cursor = new Cursor(this.reduced);
+  readonly ready: Promise<void>;
+  readonly gpu: string;
+  readonly chapters: Chapter[] = [];
+  readonly ctx: Ctx;
+  readonly sun: DirectionalLight;
+  private resolveReady!: () => void;
+  private readonly loop: Loop;
+  private readonly events: Events;
+  private loaded = false;
+  private fps = 60;
+  private frames = 0;
+  private chapter = -1;
+  private state: FrameState;
+  private pulse = 0;
+  private ended = false;
+  private environment: ReturnType<typeof buildEnvironment> | null = null;
+  shockwaves = 0;
+  constructor() {
+    this.ready = new Promise((resolve) => {
+      this.resolveReady = resolve;
+    });
+    const canvas = document.createElement("canvas");
+    canvas.setAttribute("aria-hidden", "true");
+    document.querySelector("#webgl")!.appendChild(canvas);
+    this.renderer = createRenderer(canvas);
+    this.gpu = gpuName(this.renderer);
+    this.quality = new Quality(this.gpu);
+    resizeRenderer(this.renderer, this.quality.tier);
+    this.composer = new Composer(
+      this.renderer,
+      this.scene,
+      this.rig.camera,
+      this.quality.tier,
+    );
+    this.sun = new DirectionalLight("#fff1dc", 3.2);
+    this.sun.position.copy(SUN).multiplyScalar(200);
+    this.sun.shadow.mapSize.setScalar(this.quality.tier.shadowSize || 512);
+    this.sun.shadow.bias = -0.0004;
+    this.sun.shadow.normalBias = 0.02;
+    Object.assign(this.sun.shadow.camera, {
+      left: -14,
+      right: 14,
+      top: 14,
+      bottom: -14,
+      near: 1,
+      far: 200,
+    });
+    this.scene.add(this.sun.target);
+    this.scene.add(this.sun, new HemisphereLight("#0b1030", "#05060a", 0.15));
+    this.ctx = {
+      scene: this.scene,
+      camera: this.rig.camera,
+      renderer: this.renderer,
+      tier: this.quality.tier,
+    };
+    this.state = {
+      time: 0,
+      dt: 0,
+      progress: 0,
+      chapterT: 0,
+      velocity: 0,
+      pointer: new Vector2(),
+      camera: this.rig.camera,
+      tier: this.quality.tier,
+      reduced: this.reduced,
+    };
+    this.hud = new Hud(
+      {
+        jumpTo: (p) => this.scroll.jumpTo(p),
+        setQuality: (t) => this.setTier(t),
+        toggleAudio: () => {
+          void this.audio.toggle().then((on) => this.hud.setSound(on));
+        },
+        replay: () => this.scroll.replay(),
+      },
+      this.reduced,
+    );
+    this.hud.setQuality(
+      this.quality.automatic ? "auto" : this.quality.tier.name,
+    );
+    this.events = new Events(
+      canvas,
+      this.rig,
+      () => this.resize(),
+      () => this.shockwave(),
+    );
+    this.loop = new Loop((t, dt, ms) => this.frame(t, dt, ms));
+    installDebugApi(this);
+    void this.boot();
+  }
+  private async boot() {
+    const queue = new TaskQueue(12, (p) => this.loader.setProgress(p));
+    await this.createChapters(queue);
+    for (const chapter of this.chapters) {
+      await queue.task(async () => {
+        for (const other of this.chapters) other.setVisible(other === chapter);
+        this.rig.update((chapter.range[0] + chapter.range[1]) * 0.5, 0, 0.016);
+        if (this.renderer.extensions.has("KHR_parallel_shader_compile"))
+          await this.renderer.compileAsync(this.scene, this.rig.camera);
+        else this.renderer.compile(this.scene, this.rig.camera);
+        chapter.warm(this.renderer);
+      });
+    }
+    this.rig.intro = 1;
+    this.rig.update(0, 0, 0.016);
+    this.loaded = true;
+    this.loader.setProgress(1);
+    gsap.to(this.rig, { intro: 0, duration: 1.8, ease: "power3.inOut" });
+    await this.loader.finish();
+    this.resolveReady();
+    if (new URLSearchParams(location.search).has("debug")) {
+      const { default: GUI } = await import("lil-gui");
+      const gui = new GUI({ title: "AETHER" });
+      const controls = { progress: 0, tier: this.quality.tier.name };
+      gui
+        .add(controls, "progress", 0, 1, 0.001)
+        .onChange((v: number) => this.setProgress(v));
+      gui
+        .add(controls, "tier", ["low", "medium", "high", "ultra"])
+        .onChange((v: TierName) => this.setTier(v));
+    }
+  }
+  private async createChapters(queue: TaskQueue) {
+    this.environment = await queue.task(() => buildEnvironment(this.renderer));
+    this.ctx.env = this.environment.texture;
+    const stars = new Starfield();
+    await queue.task(() => stars.init(this.ctx, queue));
+    this.chapters.push(stars);
+    const planet = new Planet();
+    await queue.task(() => planet.init(this.ctx, queue));
+    this.chapters.push(planet);
+    const rings = new Rings();
+    await queue.task(() => rings.init(this.ctx, queue));
+    this.chapters.push(rings);
+    const asteroids = new Asteroids();
+    await queue.task(() => asteroids.init(this.ctx, queue));
+    this.chapters.push(asteroids);
+    const nebula = new Nebula();
+    await queue.task(() => nebula.init(this.ctx, queue));
+    this.chapters.push(nebula);
+    const core = new Core();
+    await queue.task(() => core.init(this.ctx, queue));
+    this.chapters.push(core);
+  }
+  private frame(time: number, dt: number, rawMs: number) {
+    if (this.ended) return;
+    this.loader.update();
+    if (!this.loaded) return;
+    this.frames++;
+    this.scroll.update(dt);
+    const p = this.scroll.progress;
+    this.rig.update(p, time, dt);
+    this.renderer.info.reset();
+    this.state.time = time;
+    this.state.dt = dt;
+    this.state.progress = p;
+    this.state.velocity = this.scroll.velocity;
+    this.state.pointer.copy(this.rig.pointer);
+    this.state.tier = this.quality.tier;
+    for (const chapter of this.chapters) {
+      const active =
+        p >= chapter.range[0] - 0.06 && p <= chapter.range[1] + 0.06;
+      chapter.setVisible(active);
+      if (active) {
+        this.state.chapterT = Math.max(
+          0,
+          Math.min(
+            1,
+            (p - chapter.range[0]) / (chapter.range[1] - chapter.range[0]),
+          ),
+        );
+        chapter.update(this.state);
+      }
+    }
+    this.hud.update(this.scroll.target);
+    this.cursor.update(dt, p > 0.86, p > 0.86 ? 1 : 0);
+    const index = chapterAt(p);
+    if (index !== this.chapter) {
+      this.chapter = index;
+      this.audio.swell(index);
+    }
+    this.pulse *= Math.exp(-dt * 5);
+    this.composer.update(this.scroll.velocity, this.pulse, this.reduced);
+    this.sun.castShadow = this.quality.tier.shadowSize > 0;
+    this.renderer.shadowMap.enabled = this.sun.castShadow;
+    this.sun.position.copy(this.rig.camera.position).addScaledVector(SUN, 80);
+    this.sun.target.position.copy(this.rig.camera.position);
+    this.composer.composer.render(dt);
+    this.fps += (1000 / Math.max(rawMs, 1) - this.fps) * 0.05;
+    const next = this.quality.sample(rawMs);
+    if (next) this.applyTier();
+  }
+  setProgress(p: number) {
+    this.scroll.setProgress(p);
+    this.rig.update(p, performance.now() / 1000, 0.016);
+    this.hud.update(p);
+  }
+  setTier(tier: TierName | "auto") {
+    this.quality.set(tier);
+    this.applyTier();
+  }
+  private applyTier() {
+    this.sun.shadow.mapSize.setScalar(this.quality.tier.shadowSize || 512);
+    this.sun.shadow.map?.dispose();
+    this.sun.shadow.map = null;
+    this.ctx.tier = this.quality.tier;
+    for (const chapter of this.chapters) chapter.rebuild(this.quality.tier);
+    resizeRenderer(this.renderer, this.quality.tier);
+    this.composer.rebuild(this.quality.tier);
+    this.resize();
+    this.hud.setQuality(
+      this.quality.automatic ? "auto" : this.quality.tier.name,
+    );
+  }
+  resize() {
+    this.rig.resize();
+    resizeRenderer(this.renderer, this.quality.tier);
+    this.composer.resize();
+  }
+  shockwave() {
+    if (this.scroll.progress < 0.86 || this.reduced) return;
+    this.pulse = 1;
+    this.rig.shake = 1;
+    this.shockwaves++;
+    (this.chapters.find((c) => c.id === "core") as Core | undefined)?.shock();
+  }
+  getInfo() {
+    const info = this.renderer.info;
+    return {
+      frame: this.frames,
+      progress: this.scroll.progress,
+      chapter: chapters[chapterAt(this.scroll.progress)].name,
+      tier: this.quality.tier.name,
+      fps: this.fps,
+      calls: info.render.calls,
+      triangles: info.render.triangles,
+      points: info.render.points,
+      geometries: info.memory.geometries,
+      textures: info.memory.textures,
+      gpu: this.gpu,
+      halfFloat: this.composer.halfFloat,
+      minClearance:
+        Math.min(
+          ...this.chapters.map(
+            (c) =>
+              (c as Chapter & { minClearance?: number }).minClearance ??
+              Infinity,
+          ),
+        ) - CAMERA_MOTION_RESERVE,
+      gates: (
+        this.chapters.find((c) => c.id === "asteroids") as Asteroids | undefined
+      )?.gateClearances,
+    };
+  }
+  dispose() {
+    if (this.ended) return;
+    this.ended = true;
+    this.loop.dispose();
+    this.events.dispose();
+    this.scroll.destroy();
+    this.hud.destroy();
+    this.cursor.destroy();
+    this.audio.dispose();
+    for (const chapter of this.chapters) chapter.dispose();
+    this.composer.dispose();
+    this.environment?.dispose();
+    this.renderer.dispose();
+  }
 }

@@ -6,8 +6,10 @@
   },
   {
     "name": "typescript",
-    "version": "7.0.2",
-    "released": "2026-07-08T15:55:18.431Z"
+    "version": "6.0.3",
+    "released": "2026-07-08T15:55:18.431Z",
+    "selectedNewest": "7.0.2",
+    "reason": "Newestcompatible typescript-eslintpeer<6.1;7.0.2 install failed"
   },
   {
     "name": "three",

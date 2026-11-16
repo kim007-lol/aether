@@ -1,0 +1,2 @@
+#include <fbm>
+uniform float uTime;uniform float uEnergy;varying vec3 vP;varying vec3 vN;varying vec3 vWorld;void main(){vec3 p=vP*2.;float f=fbm(p+vec3(uTime*.2,-uTime*.12,uTime*.15));float filament=pow(1.-abs(sin(f*18.+length(p)*2.-uTime*.8)),8.);float fresnel=pow(1.-max(dot(normalize(vN),normalize(cameraPosition-vWorld)),0.),3.);vec3 color=mix(vec3(.025,.04,.35),vec3(.13,.7,1.),f);color*=.3+filament*6.;color+=vec3(.7,.18,1.)*fresnel*1.2;gl_FragColor=vec4(color*uEnergy,1.);}

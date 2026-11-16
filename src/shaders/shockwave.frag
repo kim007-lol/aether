@@ -1,0 +1,1 @@
+uniform float uOpacity;varying vec2 vUv;void main(){float edge=pow(sin(vUv.y*3.14159),.6);gl_FragColor=vec4(.3,1.8,3.,max(edge,0.)*uOpacity);}

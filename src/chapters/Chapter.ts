@@ -5,7 +5,7 @@ export interface Ctx{scene:Scene;camera:PerspectiveCamera;renderer:WebGLRenderer
 export interface Chapter{readonly id:string;readonly range:[number,number];init(ctx:Ctx,queue:TaskQueue):Promise<void>;warm(renderer:WebGLRenderer):void;update(s:FrameState):void;setVisible(v:boolean):void;rebuild(tier:Tier):void;dispose():void;}
 export abstract class SceneChapter implements Chapter{
  abstract readonly id:string;abstract readonly range:[number,number];readonly group=new Group();protected ctx!:Ctx;protected warmTarget=new WebGLRenderTarget(8,8);
- async init(ctx:Ctx,_queue:TaskQueue){this.ctx=ctx;ctx.scene.add(this.group);}
+ async init(ctx:Ctx,_queue:TaskQueue){void _queue;this.ctx=ctx;ctx.scene.add(this.group);}
  warm(renderer:WebGLRenderer){const previous=renderer.getRenderTarget();renderer.setRenderTarget(this.warmTarget);renderer.render(this.ctx.scene,this.ctx.camera);renderer.setRenderTarget(previous);}
  abstract update(s:FrameState):void;
  setVisible(v:boolean){this.group.visible=v;}

@@ -1,10 +1,20 @@
 {
-  "totalGzip": 52984,
+  "totalGzip": 327165,
   "chunks": [
     {
-      "file": "index-BBD-983W.js",
-      "bytes": 142162,
-      "gzip": 52984
+      "file": "index-Dc-dlY7T.js",
+      "bytes": 927687,
+      "gzip": 285963
+    },
+    {
+      "file": "lil-gui.esm-1mMPH2jB.js",
+      "bytes": 30626,
+      "gzip": 7962
+    },
+    {
+      "file": "rock.worker-C3GGQVGL.js",
+      "bytes": 115667,
+      "gzip": 33240
     }
   ]
 }
